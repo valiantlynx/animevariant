@@ -12,19 +12,21 @@ const init = async () => {
   const agent = new HttpAgent({host: localHost});
   agent.fetchRootKey();
 
-  //is already logged in within 8 days
-  if (authClient.isAuthenticated() && ((await authClient.getIdentity().getPrincipal().isAnonymous()) === false )){
-    console.log("logged in");
-    handleAuthenticated(authClient);
-  } else {
-    //log in
-    await authClient.login({
-      identityProvider: "https://identity.ic0.app/#authorize",
-      onSuccess : () => {
-        handleAuthenticated(authClient);
-      }
-    });
-  }
+  handleAuthenticated(authClient);
+
+  // //is already logged in within 8 days
+  // if (authClient.isAuthenticated() && ((await authClient.getIdentity().getPrincipal().isAnonymous()) === false )){
+  //   console.log("logged in");
+    
+  // } else {
+  //   //log in
+  //   await authClient.login({
+  //     identityProvider: "https://identity.ic0.app/#authorize",
+  //     onSuccess : () => {
+  //       handleAuthenticated(authClient);
+  //     }
+  //   });
+  // }
 }
 
 async function handleAuthenticated(authClient){
