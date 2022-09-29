@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Item from "./Item";
-
+import { Principal } from "@dfinity/principal";
+ 
 function Gallery(props) {
 
   const [items, setItems] = useState();

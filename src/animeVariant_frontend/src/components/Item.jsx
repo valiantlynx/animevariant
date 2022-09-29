@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Actor, HttpAgent } from "@dfinity/agent";
 import { idlFactory } from "../../../declarations/nft";
-import { idlFactory as variantIdlFactory, canisterId, createActor } from "../../../declarations/variant_backend";
+import { variantIdlFactory, canisterId, createActor } from "../../../declarations/variant_backend";
 import Button from "./Button";
 import { animeVariant_backend, canisterId, createActor } from "../../../declarations/animeVariant_backend";
 import { AuthClient } from '@dfinity/auth-client';
@@ -11,16 +11,16 @@ import PriceLabel from "./PriceLabel";
 function Item(props) {
 
 
-  const [name, setName] = useState();
-  const [owner, setOwner] = useState();
-  const [image, setImage] = useState();
-  const [button, setButton] = useState();
-  const [priceInput, setPrice] = useState();
-  const [loaderHidden, setLoaderHidden] = useState(true);
-  const [blur, setBlur] = useState();
-  const [sellStatus, setSellStatus] = useState("");
-  const [priceLabel, setPriceLabel] = useState();
-  const [shouldDisplay, setDisplay] = useState(true);
+  const [name, setName] = useState();//x
+  const [owner, setOwner] = useState();//x
+  const [image, setImage] = useState();//x
+  const [button, setButton] = useState();//x
+  const [priceInput, setPrice] = useState();//x
+  const [loaderHidden, setLoaderHidden] = useState(true);//o
+  const [blur, setBlur] = useState();//x
+  const [sellStatus, setSellStatus] = useState("");//o
+  const [priceLabel, setPriceLabel] = useState();//x
+  const [shouldDisplay, setDisplay] = useState(true);//o
 
   const id = props.id; //is a principal id
 
@@ -52,11 +52,14 @@ function Item(props) {
 
     //set name
     const name = await NFTActor.getName();
+    console.log(name);
     setName(name);
 
     //set owner
     const owner = await NFTActor.getOwner();
+    console.log(owner);
     setOwner(owner.toText());
+    
 
     //set image
     const imageData = await NFTActor.getAsset();
@@ -88,17 +91,14 @@ function Item(props) {
       const price = await animeVariant_backend.getListedNFTPrice(props.id);
       //console.log(price)
       setPriceLabel(<PriceLabel sellPrice={price.toString()} />);
-
     }
 
-
   }
-
   //to define where and how many  times we call the function we use the useEffect hook. the second parameter is for how many times to call the fuction.
   //leaving it empty mean it will be called once.
   useEffect(() => {
     loadNft();
-  }, [])
+  }, []);
 
 
   //handle sell on click cormfirm sell button  
@@ -151,14 +151,6 @@ function Item(props) {
   async function handleBuy() {
     console.log("Buy triggered");
     setLoaderHidden(false);
-
-    // //create actor to access the variant_backend using the idlfactory.
-    // // const valPrincipal = Principal.fromText("5pkqp-tqaaa-aaaak-acxba-cai");
-    //for ofline
-    // const variantActor = await Actor.createActor(variantIdlFactory, {
-    //   agent,
-    //   canisterId: Principal.fromText("5pkqp-tqaaa-aaaak-acxba-cai"),
-    // });
 
     const authClient = await AuthClient.create();
     const identity = await authClient.getIdentity();
@@ -220,3 +212,4 @@ function Item(props) {
 }
 
 export default Item;
+
