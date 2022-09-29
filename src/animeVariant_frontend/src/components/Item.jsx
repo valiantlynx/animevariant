@@ -26,7 +26,7 @@ function Item(props) {
 
   //the nft.mo canister is its own canister så instead of simply simply importing it and using its function, we have to send an http request to  it.
   // remember our main.mo(animeVariant_backend) is our canister that we can just import
-  const localHost = "http://localhost:8080/";
+  const localHost = "https://ic0.app";
   const agent = new HttpAgent({ host: localHost });
 
   // //for working locally: TODO: when deploy live, remove the following line agent is configured to work with a hardcodded live rootkey.
