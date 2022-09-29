@@ -1,0 +1,222 @@
+import React, { useEffect, useState } from "react";
+import { Actor, HttpAgent } from "@dfinity/agent";
+import { idlFactory } from "../../../declarations/nft";
+import { idlFactory as variantIdlFactory, canisterId, createActor } from "../../../declarations/variant_backend";
+import Button from "./Button";
+import { animeVariant_backend, canisterId, createActor } from "../../../declarations/animeVariant_backend";
+import { AuthClient } from '@dfinity/auth-client';
+import PriceLabel from "./PriceLabel";
+
+
+function Item(props) {
+
+
+  const [name, setName] = useState();
+  const [owner, setOwner] = useState();
+  const [image, setImage] = useState();
+  const [button, setButton] = useState();
+  const [priceInput, setPrice] = useState();
+  const [loaderHidden, setLoaderHidden] = useState(true);
+  const [blur, setBlur] = useState();
+  const [sellStatus, setSellStatus] = useState("");
+  const [priceLabel, setPriceLabel] = useState();
+  const [shouldDisplay, setDisplay] = useState(true);
+
+  const id = props.id; //is a principal id
+
+  //the nft.mo canister is its own canister så instead of simply simply importing it and using its function, we have to send an http request to  it.
+  // remember our main.mo(animeVariant_backend) is our canister that we can just import
+  const localHost = "http://localhost:8080/";
+  const agent = new HttpAgent({ host: localHost });
+
+  // //for working locally: TODO: when deploy live, remove the following line agent is configured to work with a hardcodded live rootkey.
+  //agent.fetchRootKey();
+  let NFTActor;
+
+  //load the nft from data to human visible image.
+  async function loadNft() {
+
+    const authClient = await AuthClient.create();
+    const identity = await authClient.getIdentity();
+    //console.log("item Identity: " + identity);
+    const identityPrincipal =  identity.getPrincipal();
+    //console.log("item Principal: " + currentPrincipal);
+    const currentIdentity = identityPrincipal.toString();
+    //console.log("item Principal Text: " + currentIdentity);
+
+    //access the nft
+    NFTActor = await Actor.createActor(idlFactory, {
+      agent,
+      canisterId: id
+    });
+
+    //set name
+    const name = await NFTActor.getName();
+    setName(name);
+
+    //set owner
+    const owner = await NFTActor.getOwner();
+    setOwner(owner.toText());
+
+    //set image
+    const imageData = await NFTActor.getAsset();
+    const imageContent = new Uint8Array(imageData);
+    const image = URL.createObjectURL(
+      new Blob([imageContent.buffer], { type: "image/png" })
+    );
+    setImage(image);
+
+    //if the nft is a collection or discover
+    if (props.role == "collection") {
+      //if nft is listed
+      const nftIsListed = await animeVariant_backend.isListed(props.id);
+      if (nftIsListed) {
+        setOwner("animeVariant");
+        setBlur({ filter: "blur(4px" })
+        setSellStatus("Listed");
+      } else {
+        setButton(<Button handleClick={handleSell} text={"Sell"} />);
+      }
+    } else if (props.role == "discover") {
+      const originalOwner = await animeVariant_backend.getOriginalOwner(props.id);
+      setOwner(originalOwner.toText());
+      if (originalOwner.toText() != currentIdentity) {
+        setButton(<Button handleClick={handleBuy} text={"Buy"} />);
+      }
+
+      //check price of the nft
+      const price = await animeVariant_backend.getListedNFTPrice(props.id);
+      //console.log(price)
+      setPriceLabel(<PriceLabel sellPrice={price.toString()} />);
+
+    }
+
+
+  }
+
+  //to define where and how many  times we call the function we use the useEffect hook. the second parameter is for how many times to call the fuction.
+  //leaving it empty mean it will be called once.
+  useEffect(() => {
+    loadNft();
+  }, [])
+
+
+  //handle sell on click cormfirm sell button  
+  let price;
+  function handleSell() {
+    console.log("sell");
+    setPrice(<input
+      placeholder="Price in DANG"
+      type="number"
+      className="price-input"
+      value={price}
+      onChange={(e) => price = e.target.value}
+    />);
+    setButton(<Button handleClick={sellItem} text={"Cormfirm"} />);
+
+  }
+
+  //list item for sale on the animeVariant canister
+  async function sellItem() {
+    setBlur({ filter: "blur(4px" })
+    const authClient = await AuthClient.create();
+    const identity = await authClient.getIdentity();
+
+    const authenticatedCanister = createActor(canisterId, { //fordi vi skal listeItem fra den som logger in.
+      agentOptions: {
+        identity,
+      },
+    });
+
+    setLoaderHidden(false);
+
+    console.log("Sold at set price = " + price)
+
+    const listingResult = await authenticatedCanister.listItem(props.id, Number(price));
+    console.log("Listing: " + listingResult);
+    if (listingResult == "success") {
+      const animeVariantId = await animeVariant_backend.getanimeVariantCanisterID();
+      const transferResults = await NFTActor.transferOwnership(animeVariantId);
+      console.log("transfer: " + transferResults);
+      if (transferResults == "Success") {
+        setLoaderHidden(true);
+        setButton();
+        setPrice();
+        setOwner("animeVariant");
+        setSellStatus("Listed");
+      }
+    }
+  }
+  //handle buying tranfer procedure
+  async function handleBuy() {
+    console.log("Buy triggered");
+    setLoaderHidden(false);
+
+    // //create actor to access the variant_backend using the idlfactory.
+    // // const valPrincipal = Principal.fromText("5pkqp-tqaaa-aaaak-acxba-cai");
+    //for ofline
+    // const variantActor = await Actor.createActor(variantIdlFactory, {
+    //   agent,
+    //   canisterId: Principal.fromText("5pkqp-tqaaa-aaaak-acxba-cai"),
+    // });
+
+    const authClient = await AuthClient.create();
+    const identity = await authClient.getIdentity();
+
+    const authenticatedCanister = createActor(canisterId, { //fordi vi skal transfer fra den som logger in.
+      agentOptions: {
+        identity,
+      },
+    });
+
+    //get hold of the sellers Pincipal id
+    const sellerId = await animeVariant_backend.getOriginalOwner(props.id);
+    const itemPrice = await animeVariant_backend.getListedNFTPrice(props.id);
+    //transter variant tokens for the nft
+    const result = await authenticatedCanister.transfer(sellerId, itemPrice);
+    console.log(result);
+    if (result == "success") {
+      //Transfer ownership of nft
+      const transferResult = await animeVariant_backend.completePurchase(
+        props.id,
+        sellerId,
+        currentPrincipal);
+      console.log("Purchase " + transferResult);
+      setLoaderHidden(true);
+      setDisplay(false);
+    }
+
+
+  }
+
+  return (
+    <div style={{ display: shouldDisplay ? "inline" : "none" }} className="disGrid-item">
+      <div className="disPaper-root disCard-root makeStyles-root-17 disPaper-elevation1 disPaper-rounded">
+        <img
+          className="disCardMedia-root makeStyles-image-19 disCardMedia-media disCardMedia-img"
+          src={image}
+          style={blur}
+        />
+        <div hidden={loaderHidden} className="lds-ellipsis">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div className="disCardContent-root">
+          {priceLabel}
+          <h2 className="disTypography-root makeStyles-bodyText-24 disTypography-h5 disTypography-gutterBottom">
+            {name}<span className="purple-text"> {sellStatus}</span>
+          </h2>
+          <p className="disTypography-root makeStyles-bodyText-24 disTypography-body2 disTypography-colorTextSecondary">
+            Owner: {owner}
+          </p>
+          {priceInput}
+          {button}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Item;
