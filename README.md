@@ -1,26 +1,24 @@
-# animeVariant
+# AnimeVariant
 
-Welcome to your new animeVariant project and to the internet computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
+## Welcome to the AnimeVariant project
+- Watch Anime and read Manga online. 
+- Earn money by reading and watching anime.
+- We never ask for personal infomation
+- AnimeVariant is Decentralised app Written in React and motoko.
 
-To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
+## Own Your Art.
+AnimeVariant offers everyone the opportunity to truly own the art they wish. Creators can mint their work as non fungible tokens and sell it to the whole world. In the web AnimeVariant offers all user the opportunity to buy the works they like and sell if they wish. A trading place for all art.
 
-To learn more before you start working with animeVariant, see the following documentation available online:
-
-- [Quick Start](https://sdk.dfinity.org/docs/quickstart/quickstart-intro.html)
-- [SDK Developer Tools](https://sdk.dfinity.org/docs/developers-guide/sdk-guide.html)
-- [Motoko Programming Language Guide](https://sdk.dfinity.org/docs/language-guide/motoko.html)
-- [Motoko Language Quick Reference](https://sdk.dfinity.org/docs/language-guide/language-manual.html)
-- [JavaScript API Reference](https://erxue-5aaaa-aaaab-qaagq-cai.raw.ic0.app)
-
-If you want to start working on your project right away, you might want to try the following commands:
+## How it works - How to earn money
+### creators
+-
+### Users
 
 ```bash
 cd animeVariant/
 dfx help
 dfx canister --help
 ```
-
-## Running the project locally
 
 If you want to test your project locally, you can use the following commands:
 
