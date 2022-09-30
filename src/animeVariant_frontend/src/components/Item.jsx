@@ -57,7 +57,7 @@ function Item(props) {
         identity,
       },
     });
-    console.log(NFTActor);
+    //console.log(NFTActor);
 
     //set name
     const name = await NFTActor.getName();
@@ -152,7 +152,7 @@ function Item(props) {
     if (listingResult == "success") {
       const animeVariantId = await animeVariant_backend.getanimeVariantCanisterID();
       const transferResults = await NFTActor.transferOwnership(animeVariantId);
-      console.log("transfer: " + transferResults);
+      //console.log("transfer: " + transferResults);
       if (transferResults == "Success") {
         setLoaderHidden(true);
         setButton();
@@ -205,9 +205,14 @@ function Item(props) {
         sellerId,
         identityPrincipal
       );
-      //console.log("Purchase " + transferResult);
-      setLoaderHidden(true);
-      setDisplay(false);
+      if (transferResult == "Success") {
+        //console.log("Purchase " + transferResult);
+        setLoaderHidden(true);
+        setDisplay(false);
+      } else {
+        console.log("Purchase " + transferResult);
+      }
+
     }
 
 
