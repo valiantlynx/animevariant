@@ -7,8 +7,8 @@
 - AnimeVariant is Decentralised app Written in React and motoko.
 
 ## Desentralised Urls
-animeVariant - https://52nbc-syaaa-aaaak-acxcq-cai.ic0.app/#/ -main website.
-variant - https://5ilw3-6iaaa-aaaak-acxbq-cai.ic0.app/ -wallet for variant tokens.
+- animeVariant - https://52nbc-syaaa-aaaak-acxcq-cai.ic0.app/#/ -main website.
+- variant - https://5ilw3-6iaaa-aaaak-acxbq-cai.ic0.app/ -wallet for variant tokens.
 
 ## Own Your Art.
 AnimeVariant offers everyone the opportunity to truly own the art they wish. Creators can mint their work as non fungible tokens and sell it to the whole world. In the web AnimeVariant offers all user the opportunity to buy the works they like and sell if they wish. A trading place for all art.
