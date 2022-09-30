@@ -35,7 +35,7 @@ function Anime() {
     async function fetchAnime(search) {
         const temp = await fetch('https://api.jikan.moe/v4/anime?limit=10&q=' + search +'&order_by=title&sort=asc')
         .then(res => res.json());
-        console.log(temp);
+        //console.log(temp);
 
         setAnimeList(temp.data);
         

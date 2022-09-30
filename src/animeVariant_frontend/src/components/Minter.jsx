@@ -36,7 +36,7 @@ function Minter() {
           identity,
         },
       });
-      console.log(authenticatedCanister);
+      //console.log(authenticatedCanister);
    
       const name = data.name;
       const image = data.image[0];
@@ -44,7 +44,7 @@ function Minter() {
       const imageByteData = [...new Uint8Array(imageArray)];
 
       const newNFTID = await authenticatedCanister.mint(imageByteData, name);
-      console.log("created nft with ID: " + newNFTID.toText());
+      //console.log("created nft with ID: " + newNFTID.toText());
       setNFTPrincipal(newNFTID)
       setLoaderHidden(true);
 

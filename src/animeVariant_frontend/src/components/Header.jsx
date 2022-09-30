@@ -38,11 +38,11 @@ function Header() {
   
   
       const userNFTIds = await animeVariant_backend.getOwnedNFTs(loggedInPrincipal);
-      console.log("principal of all nfts;" + userNFTIds);
+      //console.log("principal of all nfts;" + userNFTIds);
       setOwnedGallery(<Gallery title="My NFTs" ids={userNFTIds} role="collection"  />);
   
       const listedNFTIds = await animeVariant_backend.getListedNFTs();
-      console.log(listedNFTIds);
+      //console.log(listedNFTIds);
       setListingGallery(<Gallery title="Discover" ids={listedNFTIds} role="discover"  />);
 
     }
