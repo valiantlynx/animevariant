@@ -37,6 +37,8 @@ The pool stores real money such that the artwork that are being traded actually 
 Not to worry. We use a state of the art blochain tecnonology in the internet compouter blockchain called internet Identity .What?
 Internet Identity is an authentication framework. It installs an "anchor" into your device in which get stored compatible cryptography enebled devices. Such as fingerprints, faceid and pins in your phone. You can also use portable HSM, such as a YubiKey or Ledger wallet. THis makes it very convenient as you never need to remember any passwords. You dont need to provide email, phonenumber or any personal info.
 The "anchor is stored in your device and only that device. it is never in the blockchain nor can it be moved to a new device. This means you have to use the same device to log in with the same identity(account). 
+still not convinced?
+For a more detailed explanation go here (https://internetcomputer.org/docs/current/tokenomics/identity-auth/what-is-ic-identity/)
 
 
 
