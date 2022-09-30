@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Actor, HttpAgent } from "@dfinity/agent";
 import { idlFactory } from "../../../declarations/nft";
-import { variantIdlFactory, canisterId, createActor } from "../../../declarations/variant_backend";
+import { createActor as variantCreateActor } from "../../../declarations/variant_backend";
 import Button from "./Button";
 import { animeVariant_backend, canisterId, createActor } from "../../../declarations/animeVariant_backend";
 import { AuthClient } from '@dfinity/auth-client';
+import { Principal } from "@dfinity/principal";
 import PriceLabel from "./PriceLabel";
+
 
 
 function Item(props) {
@@ -39,8 +41,8 @@ function Item(props) {
     const authClient = await AuthClient.create();
     const identity = await authClient.getIdentity();
     //console.log("item Identity: " + identity);
-    const identityPrincipal =  identity.getPrincipal();
-    //console.log("item Principal: " + currentPrincipal);
+    const identityPrincipal = identity.getPrincipal();
+    //console.log("item Principal: " + identityPrincipal);
     const currentIdentity = identityPrincipal.toString();
     //console.log("item Principal Text: " + currentIdentity);
 
@@ -57,9 +59,9 @@ function Item(props) {
 
     //set owner
     const owner = await NFTActor.getOwner();
-    console.log(owner);
+    console.log("owner of nft: " + owner);
     setOwner(owner.toText());
-    
+
 
     //set image
     const imageData = await NFTActor.getAsset();
@@ -72,6 +74,7 @@ function Item(props) {
     //if the nft is a collection or discover
     if (props.role == "collection") {
       //if nft is listed
+
       const nftIsListed = await animeVariant_backend.isListed(props.id);
       if (nftIsListed) {
         setOwner("animeVariant");
@@ -83,6 +86,7 @@ function Item(props) {
     } else if (props.role == "discover") {
       const originalOwner = await animeVariant_backend.getOriginalOwner(props.id);
       setOwner(originalOwner.toText());
+
       if (originalOwner.toText() != currentIdentity) {
         setButton(<Button handleClick={handleBuy} text={"Buy"} />);
       }
@@ -121,23 +125,27 @@ function Item(props) {
     setBlur({ filter: "blur(4px" })
     const authClient = await AuthClient.create();
     const identity = await authClient.getIdentity();
+    //console.log("identity; " + JSON.stringify(identity, null, 2));
 
     const authenticatedCanister = createActor(canisterId, { //fordi vi skal listeItem fra den som logger in.
       agentOptions: {
         identity,
       },
     });
+    console.log(authenticatedCanister);
 
     setLoaderHidden(false);
 
     console.log("Sold at set price = " + price)
+
+    // authenticatedCanister is empty. it is supposed to be full with all the functions of animeVariant_backend
 
     const listingResult = await authenticatedCanister.listItem(props.id, Number(price));
     console.log("Listing: " + listingResult);
     if (listingResult == "success") {
       const animeVariantId = await animeVariant_backend.getanimeVariantCanisterID();
       const transferResults = await NFTActor.transferOwnership(animeVariantId);
-      console.log("transfer: " + transferResults);
+      //console.log("transfer: " + transferResults);
       if (transferResults == "Success") {
         setLoaderHidden(true);
         setButton();
@@ -154,25 +162,42 @@ function Item(props) {
 
     const authClient = await AuthClient.create();
     const identity = await authClient.getIdentity();
+    //console.log("item Identity: " + identity);
+    const identityPrincipal = identity.getPrincipal();
+    console.log("item Principal: " + identityPrincipal);
 
-    const authenticatedCanister = createActor(canisterId, { //fordi vi skal transfer fra den som logger in.
+//authenticated Variant
+    const variantPrincipal = Principal.fromText("5pkqp-tqaaa-aaaak-acxba-cai");
+    const authenticatedVariantCanister = variantCreateActor(variantPrincipal, { //fordi vi skal transfer fra den som logger in.
       agentOptions: {
         identity,
       },
     });
+    console.log(authenticatedVariantCanister);
+    //console.log("variantCanisterId; "+variantPrincipal);
+
+    //authenticated animeVariandCanister
+    const authenticatedAnimeVariandCanister = createActor(canisterId, { //fordi vi skal listeItem fra den som logger in.
+      agentOptions: {
+        identity,
+      },
+    });
+    console.log(authenticatedAnimeVariandCanister);
 
     //get hold of the sellers Pincipal id
     const sellerId = await animeVariant_backend.getOriginalOwner(props.id);
+    console.log("sellerID; " + sellerId);
     const itemPrice = await animeVariant_backend.getListedNFTPrice(props.id);
     //transter variant tokens for the nft
-    const result = await authenticatedCanister.transfer(sellerId, itemPrice);
-    console.log(result);
+    const result = await authenticatedVariantCanister.transfer(sellerId, itemPrice);
+    console.log("money transfer; " + result);
     if (result == "success") {
       //Transfer ownership of nft
-      const transferResult = await animeVariant_backend.completePurchase(
+      const transferResult = await authenticatedAnimeVariandCanister.completePurchase(
         props.id,
         sellerId,
-        currentPrincipal);
+        identityPrincipal
+      );
       console.log("Purchase " + transferResult);
       setLoaderHidden(true);
       setDisplay(false);

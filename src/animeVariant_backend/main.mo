@@ -124,13 +124,13 @@ actor animeVariant {
     return listing.itemPrice;
   };
 //handle exchange between nft of buye and seller
-  public shared(msg) func completePurchase(id: Principal, ownerId: Principal, neOwnerId: Principal) : async Text {
+  public shared(msg) func completePurchase(id: Principal, ownerId: Principal, newOwnerId: Principal) : async Text {
     var purchachedNFT : NFTActorClass.NFT = switch (mapOfNFTs.get(id)){
       case null return "NFT does not exist";
       case (?result) result;
     };
 
-    let transferResult = await purchachedNFT.transferOwnership(neOwnerId);
+    let transferResult = await purchachedNFT.transferOwnership(newOwnerId);
     if (transferResult == "Success"){
       mapOfListings.delete(id);
       //previous owner nfts list
@@ -146,7 +146,7 @@ actor animeVariant {
       });
 
       //add prurchased nft to new owners list
-      addToOwnershipMap(neOwnerId, id);
+      addToOwnershipMap(newOwnerId, id);
       return "Success";
 
     } else{

@@ -18,7 +18,7 @@ actor class NFT (name: Text, owner: Principal, content: [Nat8]) = this {
         return imagebytes;
     };
     public query func getCanisterId() : async Principal {
-        return Principal.fromActor(this); //this, beacause the actor nft expects input så we cant juc\st put NFT there.
+        return Principal.fromActor(this); //this, beacause the actor nft expects input så we cant just put NFT there.
     };
 
     public shared(msg) func transferOwnership(newOwner: Principal) : async Text {

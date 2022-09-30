@@ -36,6 +36,7 @@ function Minter() {
           identity,
         },
       });
+      console.log(authenticatedCanister);
    
       const name = data.name;
       const image = data.image[0];
