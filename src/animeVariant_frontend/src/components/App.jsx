@@ -23,7 +23,7 @@ function App(props) {
   // const NFTID = "rrkah-fqaaa-aaaaa-aaaaq-cai";
 
   return (
-    <div className="App">
+    <div className="">
       <Header userPrincipal={currentUser}/>
       {/* <Minter />
       <Item id={NFTID}/> */}

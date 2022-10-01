@@ -42,8 +42,8 @@ function Anime() {
     }
 
     return (
-        <div className="App">
-            <div className="content-wrap">
+        <div className="">
+            <div className="">
                 <Sidebar
                     topContent={topAnime} />
                 <AnimeMainContent 

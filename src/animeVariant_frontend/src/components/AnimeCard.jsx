@@ -3,23 +3,22 @@ import React from "react";
 
 function AnimeCard(props) {
   return (
-    <article className="anime-card">
-        <a 
-
-            href={props.content.url} 
-
-            className="anime-card-a-tag" 
-            target="_blank" 
-            rel="norefferer">
-            <figure>
-
-                <img src={props.content.images.webp.image_url} alt={props.content.title} />
-            </figure>
-            <h3>{props.content.title}</h3>
+    <div className="content_box col">
+      <div className="p-3 border">
+        <a
+        id="title"
+          href={props.content.url}
+          rel="external">
+          <figure>
+            <img width="200px" height="aut0" src={props.content.images.webp.image_url} alt={props.content.title} />
+          </figure>
+          <h3 className="title" >{props.content.title}</h3>
 
         </a>
+      </div>
 
-    </article>
+
+    </div>
   );
 }
 

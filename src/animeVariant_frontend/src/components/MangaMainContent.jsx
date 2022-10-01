@@ -1,5 +1,6 @@
 import React from "react";
 import AnimeCard from "./AnimeCard";
+import Gallery from "./Gallery";
 
 function MainContent(props) {
     function content() {
@@ -14,20 +15,20 @@ function MainContent(props) {
     }
     return (
         <main>
-            <div className="main-head">
+            <div className="">
                 <form
-                    className="search-box"
+                    className=""
                     onSubmit={props.handleSearch}>
                     <input
-                        type="search"
+                        type=""
                         placeholder="Search for an anime..."
                         required
                         value={props.search}
                         onChange={e => props.setSearch(e.target.value)} />
                 </form>
             </div>
-            <div className="anime-list">
-                {content()}
+            <div >
+                <Gallery content={content()}/>               
             </div>
         </main>
     );

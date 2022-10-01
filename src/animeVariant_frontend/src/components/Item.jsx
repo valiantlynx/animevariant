@@ -219,25 +219,23 @@ function Item(props) {
   }
 
   return (
-    <div style={{ display: shouldDisplay ? "inline" : "none" }} className="disGrid-item">
-      <div className="disPaper-root disCard-root makeStyles-root-17 disPaper-elevation1 disPaper-rounded">
+    <div style={{ display: shouldDisplay ? "inline" : "none" }} className="content_box col">
+      <div className="p-3 border">
         <img
-          className="disCardMedia-root makeStyles-image-19 disCardMedia-media disCardMedia-img"
+          width="200px" 
+          height="aut0"
+          className=""
           src={image}
           style={blur}
         />
-        <div hidden={loaderHidden} className="lds-ellipsis">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+        <div hidden={loaderHidden}>
         </div>
-        <div className="disCardContent-root">
+        <div className="btn btn-success" >
           {priceLabel}
-          <h2 className="disTypography-root makeStyles-bodyText-24 disTypography-h5 disTypography-gutterBottom">
-            {name}<span className="purple-text"> {sellStatus}</span>
+          <h2 className="">
+            {name}<span className=""> {sellStatus}</span>
           </h2>
-          <p className="disTypography-root makeStyles-bodyText-24 disTypography-body2 disTypography-colorTextSecondary">
+          <p className="">
             Owner: {owner}
           </p>
           {priceInput}

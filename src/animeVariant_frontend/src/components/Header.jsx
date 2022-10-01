@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
 import { HashRouter, Link, Routes, Route } from "react-router-dom";
-import homeImage from "../../assets/home-img.png";
 import Minter from "./Minter";
 import Gallery from "./Gallery";
 import Anime from "./Anime";
 import { animeVariant_backend } from "../../../declarations/animeVariant_backend";
 import { AuthClient } from '@dfinity/auth-client';
 import Manga from "./Manga";
+import LandingPage from "./LandingPage";
 
 
 function Header() {
@@ -34,16 +34,16 @@ function Header() {
 
     async function handleAuthenticated(authClient) {
       const identity = await authClient.getIdentity();
-      const loggedInPrincipal= identity.getPrincipal();
-  
-  
+      const loggedInPrincipal = identity.getPrincipal();
+
+
       const userNFTIds = await animeVariant_backend.getOwnedNFTs(loggedInPrincipal);
       //console.log("principal of all nfts;" + userNFTIds);
-      setOwnedGallery(<Gallery title="My NFTs" ids={userNFTIds} role="collection"  />);
-  
+      setOwnedGallery(<Gallery title="My NFTs" ids={userNFTIds} role="collection" />);
+
       const listedNFTIds = await animeVariant_backend.getListedNFTs();
       //console.log(listedNFTIds);
-      setListingGallery(<Gallery title="Discover" ids={listedNFTIds} role="discover"  />);
+      setListingGallery(<Gallery title="Discover" ids={listedNFTIds} role="discover" />);
 
     }
   };
@@ -54,49 +54,65 @@ function Header() {
 
   return (
 
-      <HashRouter>
+    <HashRouter>
 
-        <div className="app-root-1"  >
 
-          <header className="Paper-root AppBar-root AppBar-positionStatic AppBar-colorPrimary Paper-elevation4" >
-            <div className="Toolbar-root Toolbar-regular header-appBar-13 Toolbar-gutters">
-              <div className="header-left-4"></div>
-              <img className="header-logo-11" src={logo} />
-              <div className="header-vertical-9"></div>
-              <Link to="/">
-                <h5 className="Typography-root header-logo-text">animeVariant</h5>
+      <div className=""  >
+
+        <header className="" >
+        <section class="colored_section" id="title">
+          <nav className="navbar sticky-bottom navbar-expand-md bg-light"  >
+            <div className="container-fluid">
+              <Link className="navbar-brand company_name" to="/">
+                <img  src={logo} alt="logo of anime variant" width="30" height="30" className="d-inline-block align-text-top"/> animeVariant
               </Link>
-              <div className="header-empty-6"></div>
-              <div className="header-space-8"></div>
-              <button className="ButtonBase-root Button-root Button-text header-navButtons-3">
-                <Link to="/discover">Discover</Link>
+              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
               </button>
-              <button className="ButtonBase-root Button-root Button-text header-navButtons-3">
-                <Link to="/minter">Minter</Link>
-              </button>
-              <button className="ButtonBase-root Button-root Button-text header-navButtons-3">
-                <Link to="/collection">My NFTs</Link>
-              </button>
-              <button className="ButtonBase-root Button-root Button-text header-navButtons-3">
-                <Link to="/anime">Anime</Link>
-              </button>
-              <button className="ButtonBase-root Button-root Button-text header-navButtons-3">
-                <Link to="/manga">Manga</Link>
-              </button>
+              <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li className="nav-item">
+
+                    <Link className="nav-link active" aria-current="page" to="/anime">Anime</Link>
+                  </li>
+                  <li className="nav-item">
+
+                    <Link className="nav-link" to="/manga">Manga</Link>
+                  </li>
+                  <li className="nav-item">
+
+                    <Link className="nav-link" to="/discover">Discover</Link>
+                  </li>
+
+                  <li className="nav-item dropdown">
+                    <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Member Options
+                    </a>
+                    <ul className="dropdown-menu">
+                      <li><Link className="dropdown-item" to="/minter">Create NFT</Link></li>
+                      <li><hr className="dropdown-divider" /></li>
+                      <Link className="dropdown-item" to="/collection">My NFTs</Link>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </header>
-        </div>
+          </nav>
+          </section>
 
-        <Routes >
-          <Route exact path="/" element={<img className="bottom-space" src={homeImage} />} />
-          <Route path="/discover" element={listingGallery} />
-          <Route path="/minter" element={<Minter />} />
-          <Route path="/anime" element={<Anime />} />
-          <Route path="/manga" element={<Manga />} />
-          <Route path="/collection" element={useOwnedGallery} />
-        </Routes>
+        </header>
+      </div>
 
-      </HashRouter>
+      <Routes >
+        <Route exact path="/" element={<LandingPage />} />
+        <Route path="/discover" element={listingGallery} />
+        <Route path="/minter" element={<Minter />} />
+        <Route path="/anime" element={<Anime />} />
+        <Route path="/manga" element={<Manga />} />
+        <Route path="/collection" element={useOwnedGallery} />
+      </Routes>
+
+    </HashRouter>
   );
 }
 

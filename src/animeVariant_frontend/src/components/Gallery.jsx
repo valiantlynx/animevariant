@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Item from "./Item";
 import { Principal } from "@dfinity/principal";
- 
+
 function Gallery(props) {
 
   const [items, setItems] = useState();
@@ -22,15 +22,12 @@ function Gallery(props) {
   }, []);
 
   return (
-    <div className="gallery-view">
-      <h3 className="makeStyles-title-99 Typography-h3" >{props.title}</h3>
-      <div className="disGrid-root disGrid-container disGrid-spacing-xs-2">
-        <div className="disGrid-root disGrid-item disGrid-grid-xs-12">
-          <div className="disGrid-root disGrid-container disGrid-spacing-xs-5 disGrid-justify-content-xs-center">
-            {items}
-          </div>
-        </div>
+    <div className="features-container container-fluid px-4 text-center">
+
+      <div className="row g-5">
+        {items}{props.content}
       </div>
+      <h3 className="title" >{props.title}</h3>
     </div>
   );
 }

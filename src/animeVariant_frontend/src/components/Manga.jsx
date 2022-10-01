@@ -43,8 +43,8 @@ function Manga() {
     }
 
     return (
-        <div className="App">
-            <div className="content-wrap">
+        <div className="">
+            <div className="">
                 <Sidebar
                     topContent={topManga} />
                 <MangaMainContent 

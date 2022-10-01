@@ -2,10 +2,10 @@ import React from "react";
 
 function Button(props) {
     return(
-        <div className="Chip-root makeStyles-chipBlue-108 Chip-clickable">
+        <div className="btn btn-dark">
             <span
               onClick={props.handleClick}
-              className="form-Chip-label">
+              id="title">
               {props.text}
             </span>
             </div>
