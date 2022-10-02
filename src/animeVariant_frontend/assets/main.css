@@ -1,8 +1,16 @@
 /*tag's*/
 
 body {
-    font-family: 'Montserrat', sans-serif;
     text-align: center;
+    font-size: 1.5rem;
+    background-color: #141416 !important;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
 }
 
 h1,
@@ -52,7 +60,7 @@ p {
 
 .row {
     padding-top: calc(var(--bs-gutter-x) * .5);
-    padding-bottom: calc(var(--bs-gutter-x) * .5);  
+    padding-bottom: calc(var(--bs-gutter-x) * .5);
 }
 
 .content_box {
@@ -170,14 +178,14 @@ p {
     #title {
         text-align: center;
     }
+
     #main_img {
         position: static;
         transform: rotate(0);
         width: 100%;
     }
 }
+
 .selector-for-some-widget {
     box-sizing: content-box;
-  }
-
-  
+}

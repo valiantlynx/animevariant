@@ -4,7 +4,7 @@ import React from "react";
 function AnimeCard(props) {
   return (
     <div className="content_box col">
-      <div className="p-3 border">
+      <div className="p-3 ">
         <a
         id="title"
           href={props.content.url}
