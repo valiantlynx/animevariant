@@ -57,10 +57,8 @@ function Header() {
     <HashRouter>
 
 
-      <div className=""  >
-
         <header className="" >
-        <section class="colored_section" id="title">
+        <section className="colored_section" id="title">
           <nav className="navbar sticky-bottom navbar-expand-md bg-light"  >
             <div className="container-fluid">
               <Link className="navbar-brand company_name" to="/">
@@ -101,7 +99,6 @@ function Header() {
           </section>
 
         </header>
-      </div>
 
       <Routes >
         <Route exact path="/" element={<LandingPage />} />

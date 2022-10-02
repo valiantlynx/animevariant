@@ -11,6 +11,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
+
 }
 
 h1,
@@ -127,6 +128,7 @@ p {
 
 .navbar {
     padding-bottom: 4.5rem;
+    background-color: #141416 !important;
 }
 
 .nav-item {
