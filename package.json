@@ -2,7 +2,12 @@
   "name": "animeVariant_frontend",
   "version": "0.1.0",
   "description": "Internet Computer starter application",
-  "keywords": ["Internet Computer", "Motoko", "JavaScript", "Canister"],
+  "keywords": [
+    "Internet Computer",
+    "Motoko",
+    "JavaScript",
+    "Canister"
+  ],
   "scripts": {
     "build": "webpack",
     "prebuild": "npm run copy:types",
@@ -46,6 +51,10 @@
     "@dfinity/auth-client": "0.13.2",
     "@dfinity/authentication": "0.13.2",
     "@dfinity/identity": "0.13.2",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/lab": "^5.0.0-alpha.101",
+    "@mui/material": "^5.10.7",
     "bootstrap": "^5.2.1",
     "file-loader": "^6.2.0",
     "history": "^5.3.0",

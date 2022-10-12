@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Item from "./Item";
-import { Principal } from "@dfinity/principal";
+
 
 function Gallery(props) {
 
@@ -23,12 +23,18 @@ function Gallery(props) {
 
   return (
     <div className="features-container container-fluid px-4 text-center">
+      <div className="container px-4 py-5" id="custom-cards">
+        <h2 className="pb-2 border-bottom">Gallery</h2>
 
-      <div className="row g-5">
-        {items}{props.content}
+        <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5 dtyle"  dataMasonry='{"percentPosition": true }'>
+
+            {items}{props.content}
+            <h3 className="title" >{props.title}</h3>
+
+        </div>
+
       </div>
-      <h3 className="title" >{props.title}</h3>
-    </div>
+    </div >
   );
 }
 

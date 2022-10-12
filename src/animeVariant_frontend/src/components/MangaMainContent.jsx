@@ -1,12 +1,12 @@
 import React from "react";
-import AnimeCard from "./AnimeCard";
+import Card from "./Card";
 import Gallery from "./Gallery";
 
 function MainContent(props) {
     function content() {
         return(
             props.mangaList.map(content => (
-                <AnimeCard 
+                <Card 
                     content={content}
                     key={content.mal_id}/>
             ))

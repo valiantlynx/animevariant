@@ -1,8 +1,15 @@
 /*tag's*/
 
 body {
-    font-family: 'Montserrat', sans-serif;
     text-align: center;
+    font-size: 1.5rem;
+    background-color: #ffffff8e !important;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -83,17 +90,9 @@ p {
     text-align: left;
 }
 
-#main_img {
-    transform: rotate(24deg);
-    width: 20%;
-    position: absolute;
-    right: 250px;
-}
-
 #features {
     background-color: var(--bg-color);
     position: relative;
-    z-index: 1;
 }
 
 #press {
