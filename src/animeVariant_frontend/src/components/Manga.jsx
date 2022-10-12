@@ -44,9 +44,6 @@ function Manga() {
 
     return (
         <div className="">
-            <head> 
-                <meta> gfiuhdfsdhf </meta>
-            </head>
             <div className="">
                 <Sidebar
                     topContent={topManga} />
