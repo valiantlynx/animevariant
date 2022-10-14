@@ -15,19 +15,19 @@ function MainContent(props) {
     }
     return (
         <main>
-            <div className="">
+            <div className="main-head">
                 <form
-                    className=""
+                    className="search-box"
                     onSubmit={props.handleSearch}>
                     <input
-                        type=""
+                        type="search"
                         placeholder="Search for an anime..."
                         required
                         value={props.search}
                         onChange={e => props.setSearch(e.target.value)} />
                 </form>
             </div>
-            <div >
+            <div className="anime-list container-fluid" >
                 <Gallery content={content()}/>               
             </div>
         </main>

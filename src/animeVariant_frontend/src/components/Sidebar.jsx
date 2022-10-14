@@ -4,7 +4,7 @@ function Sidebar(props) {
     //console.log(props.topContent);
 
     function content() {
-        return(
+        return (
             props.topContent.map(content => (
                 <a href={content.url}
                     target="_blank"
@@ -17,9 +17,12 @@ function Sidebar(props) {
     }
 
     return (
-        <aside>
+        <aside className="container-fluid">
             <nav>
-                <h3>Top Content</h3>
+                <center>
+                    <h3>Top Content</h3>
+                </center>
+
                 {content()}
             </nav>
         </aside>

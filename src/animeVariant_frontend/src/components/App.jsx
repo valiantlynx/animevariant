@@ -24,10 +24,7 @@ function App(props) {
 
   return (
     <div className="">
-  
       <Header userPrincipal={currentUser}/>
-    
-      
       {/* <Minter />
       <Item id={NFTID}/> */}
       <Footer />

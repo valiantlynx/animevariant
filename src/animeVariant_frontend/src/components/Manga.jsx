@@ -12,7 +12,7 @@ function Manga() {
     //get the top manga
     const getTopManga = async () => {
         const temp = await fetch('https://api.jikan.moe/v4/top/manga')
-        .then(res => res.json());
+            .then(res => res.json());
         //console.log(temp);
 
         setTopManga(temp.data.slice(0, 5));
@@ -20,7 +20,7 @@ function Manga() {
     }
     useEffect(() => {
         getTopManga();
-        
+
         //console.log("topManga");
     }, []);
     //console.log(topManga);
@@ -34,8 +34,8 @@ function Manga() {
 
     //fetch the anime from the database
     async function fetchAnime(search) {
-        const temp = await fetch('https://api.jikan.moe/v4/manga?limit=10&q=' + search +'&order_by=title&sort=asc')
-        .then(res => res.json());
+        const temp = await fetch('https://api.jikan.moe/v4/manga?limit=10&q=' + search + '&order_by=title&sort=asc')
+            .then(res => res.json());
         //console.log(temp);
 
         setMangaList(temp.data);
@@ -43,15 +43,20 @@ function Manga() {
     }
 
     return (
-        <div className="">
-            <div className="">
+        <div className="App container-fluid">
+            <header>
+                <h1>The<strong>Manga</strong>Database</h1>
+            </header>
+            <div className=" row content-wrap align-items-stretch">
                 <Sidebar
+                    className="col"
                     topContent={topManga} />
-                <MangaMainContent 
-                    handleSearch={handleSearch} 
+                <MangaMainContent
+                    className="col"
+                    handleSearch={handleSearch}
                     search={search}
                     setSearch={setSearch}
-                    mangaList={mangaList}/>
+                    mangaList={mangaList} />
             </div>
 
 

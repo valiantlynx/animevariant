@@ -42,12 +42,17 @@ function Anime() {
     }
 
     return (
-        <div className="">
-            
-            <div className="">
+        <div className="App container-fluid">
+            <header>
+                <h1>The<strong>Anime</strong>Database</h1>
+            </header>
+
+            <div className="row content-wrap">
                 <Sidebar
+                    className="col"
                     topContent={topAnime} />
                 <AnimeMainContent
+                    className="col"
                     handleSearch={handleSearch}
                     search={search}
                     setSearch={setSearch}
