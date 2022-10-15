@@ -219,18 +219,54 @@ function Item(props) {
   }
 
   return (
-    // <div style={{ display: shouldDisplay ? "inline" : "none" }} className="col">
-    //   <div className="p-3 border " >
-    //     <img
-    //       width="200px" 
-    //       height="aut0"
-    //       className=""
-    //       src={image}
-    //       style={blur}
-    //     />
-    //     <div hidden={loaderHidden}>
+  <div style={{ display: shouldDisplay ? "inline" : "none" }} className="col-xxl-2 col-xl-3 col-lg-4 col-md-4 col-sm-5  disGrid-item">
+
+
+     <div className="disPaper-root disCard-root makeStyles-root-17 disPaper-elevation1 disPaper-rounded ">
+       <img
+         className="disCardMedia-root makeStyles-image-19 disCardMedia-media disCardMedia-img"
+         src={image}
+         style={blur}
+       />
+       <div hidden={loaderHidden} className="lds-ellipsis">
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+       </div>
+       <div className="disCardContent-root">
+         {priceLabel}
+         <h2 className="disTypography-root makeStyles-bodyText-24 disTypography-h5 disTypography-gutterBottom">
+           {name}<span className="purple-text"> {sellStatus}</span>
+         </h2>
+         <p className="disTypography-root makeStyles-bodyText-24 disTypography-body2 disTypography-colorTextSecondary">
+           Owner: {owner}
+         </p>
+         {priceInput}
+         {button}
+       </div>
+     </div>
+   </div>
+
+    // <div className="col">
+    //   <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" width="200px" style={{ backgroundImage: 'url(' + image + ')' }} >
+
+    //     <div className="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+
+    //       <h3 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{name} </h3>
+
+    //       <ul className="d-flex list-unstyled mt-auto">
+
+    //         <li className="me-auto">
+    //           <img src={image} alt="the profile picture of use in anime variant" width="32" height="32" className="rounded-circle border border-white" />
+    //         </li>
+            
+
+    //       </ul>
     //     </div>
-    //     <div className="btn btn-success" >
+    //     <div hidden={loaderHidden} >
+    //     </div>
+    //     <div className="btn btn-success pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" >
     //       {priceLabel}
     //       <h2 className="">
     //         {name}<span className=""> {sellStatus}</span>
@@ -242,39 +278,8 @@ function Item(props) {
     //       {button}
     //     </div>
     //   </div>
+
     // </div>
-    <div className="col">
-      <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" width="200px" style={{ backgroundImage: 'url(' + image + ')' }} >
-
-        <div className="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-
-          <h3 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{name} </h3>
-
-          <ul className="d-flex list-unstyled mt-auto">
-
-            <li className="me-auto">
-              <img src={image} alt="the profile picture of use in anime variant" width="32" height="32" className="rounded-circle border border-white" />
-            </li>
-            
-
-          </ul>
-        </div>
-        <div hidden={loaderHidden} >
-        </div>
-        <div className="btn btn-success pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" >
-          {priceLabel}
-          <h2 className="">
-            {name}<span className=""> {sellStatus}</span>
-          </h2>
-          <p className="">
-            Owner: {owner}
-          </p>
-          {priceInput}
-          {button}
-        </div>
-      </div>
-
-    </div>
   );
 }
 

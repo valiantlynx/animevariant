@@ -28,7 +28,7 @@ function LandingPage() {
                             <div className="carousel-caption">
                                 <h1>Private and Secure.</h1>
                                 <p>We never ask for any personal information. The Internet Identity ensures that.</p>
-                                <p><a className="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                                <p><a className="btn btn-lg btn-primary" href="/docs">Learn more</a></p>
                             </div>
                         </div>
                     </div>
@@ -39,7 +39,7 @@ function LandingPage() {
                             <div className="carousel-caption text-end">
                                 <h1>Own your Anime and Manga.</h1>
                                 <p>Grow your art to become the next monalisa, worth millions.</p>
-                                <p><a className="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                                <p><a className="btn btn-lg btn-primary" href="/discover">Browse gallery</a></p>
                             </div>
                         </div>
                     </div>

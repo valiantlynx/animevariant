@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { animeVariant_backend, canisterId, createActor } from "../../../declarations/animeVariant_backend";
 import { AuthClient } from '@dfinity/auth-client';
 import Item from "./Item";
+import Button from '../components/Button';
+
 
 function Minter() {
 
@@ -25,7 +27,8 @@ function Minter() {
           handleAuthenticated(authClient);
         }
       });
-    }
+    };
+
 
     async function handleAuthenticated(authClient) {
       setLoaderHidden(false);
@@ -37,7 +40,7 @@ function Minter() {
         },
       });
       //console.log(authenticatedCanister);
-   
+
       const name = data.name;
       const image = data.image[0];
       const imageArray = await image.arrayBuffer();
@@ -55,46 +58,50 @@ function Minter() {
   if (nftPrincipal == "") {
 
     return (
-      <div className="">
-        <div hidden={loaderHidden} className="lds-ellipsis">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <h3 className="">
-          Create NFT
-        </h3>
-        <h6 className="">
-          Upload Image
-        </h6>
-        <form className="" noValidate="" autoComplete="off">
-          <div className="">
-            <input
-              {...register("image", { required: true })}
-              className=""
-              type="file"
-              accept="image/x-png,image/jpeg,image/gif,image/svg+xml,image/webp"
-            />
+      <div >
+        <center>
+          <div hidden={loaderHidden} className=" lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
           </div>
-          <h6 className="">
-            Collection Name
+          <header>
+            <h1>Create<strong>NFT</strong>.</h1>
+          </header>
+
+          <h6 >
+            Upload Image
           </h6>
-          <div className="">
+          <form noValidate="" autoComplete="off"className="container">
             <div className="">
               <input
-                {...register("name", { required: true })}  //trippledot notation is to add to the stuff that are already registered on register(added at the end).
-                placeholder="e.g. CryptoDunks"
-                type="text"
-                className=""
+                {...register("image", { required: true })}
+                className="form-control"
+                type="file"
+                accept="image/x-png,image/jpeg,image/gif,image/svg+xml,image/webp"
               />
-              <fieldset className=""></fieldset>
             </div>
-          </div>
-          <div className="">
-            <span onClick={handleSubmit(onSubmit)} className="">Mint NFT</span>
-          </div>
-        </form>
+            <h6 className="">
+              Collection Name
+            </h6>
+            <div className="">
+              <div className="">
+                <input
+                  {...register("name", { required: true })}  //trippledot notation is to add to the stuff that are already registered on register(added at the end).
+                  placeholder="e.g. CryptoDunks"
+                  type="text"
+                  className="form-control"
+                />
+                <fieldset className=""></fieldset>
+              </div>
+            </div>
+            <div className="">
+              <Button handleClick={handleSubmit(onSubmit)} text="Mint NFT"></Button>
+            </div>
+          </form>
+        </center>
+
       </div>
     );
 

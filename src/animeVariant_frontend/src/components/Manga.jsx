@@ -44,7 +44,7 @@ function Manga() {
 
     return (
         <div className="App container-fluid">
-            <header>
+            <header width="100%">
                 <h1>The<strong>Manga</strong>Database</h1>
             </header>
             <div className=" row content-wrap align-items-stretch">

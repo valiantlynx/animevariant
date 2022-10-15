@@ -43,11 +43,12 @@ function Anime() {
 
     return (
         <div className="App container-fluid">
-            <header>
+            <header width="100%">
                 <h1>The<strong>Anime</strong>Database</h1>
             </header>
 
             <div className="row content-wrap">
+                
                 <Sidebar
                     className="col"
                     topContent={topAnime} />

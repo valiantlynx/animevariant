@@ -18,6 +18,7 @@ function Sidebar(props) {
 
     return (
         <aside className="container-fluid">
+            
             <nav>
                 <center>
                     <h3>Top Content</h3>
