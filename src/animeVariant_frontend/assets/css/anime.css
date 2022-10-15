@@ -39,11 +39,7 @@ header h1 strong {
   font-size: 24px;
   margin-bottom: 16px
 }
-a{
-  color: #5f64b5 !important;
-  text-decoration: none !important;
 
-}
 
 .content-wrap aside nav a {
   display: block;
@@ -54,6 +50,8 @@ a{
   background-color: #EEE;
   border-radius: 999px;
   transition: 0.4s;
+  color: #5f64b5;
+  text-decoration: none;
 }
 
 .content-wrap aside nav a:hover {

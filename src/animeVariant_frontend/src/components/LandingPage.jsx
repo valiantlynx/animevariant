@@ -17,7 +17,7 @@ function LandingPage() {
                             <div className="carousel-caption text-start">
                                 <h1>Anime and Manga Marketplace</h1>
                                 <p>Upload your art as an NFT and watch it grow i price.</p>
-                                <p><a className="btn btn-lg btn-primary" href="#">Join and Create</a></p>
+                                <p><a className="carousel-button btn btn-lg btn-primary" href="https://5ilw3-6iaaa-aaaak-acxbq-cai.ic0.app/">Join and Create</a></p>
                             </div>
                         </div>
                     </div>
@@ -59,7 +59,7 @@ function LandingPage() {
 
                 <div className="row">
                     <div className="col-lg-4">
-                    <img alt="main page image of anime variant" aria-label="Placeholder: 140x140" role="img" preserveAspectRatio="xMidYMid slice" focusable="false" width="140" height="140"className="bd-placeholder-img rounded-circle" src="https://picsum.photos/1080/1080" ></img>
+                    <img alt="main page image of anime variant" aria-label="Placeholder: 140x140" role="img" preserveAspectRatio="xMidYMid slice" focusable="false" width="140" height="140"className="bd-placeholder-img rounded-circle" src="https://image.spreadshirtmedia.net/image-server/v1/mp/products/T1459A839PA4459PT28D153957947W10000H10000/views/1,width=800,height=800,appearanceId=839,backgroundColor=F2F2F2/anime-and-chill-manga-chill-gift-japan-tokyo-sticker.jpg" ></img>
                   
 
                         <h2 className="fw-normal">Heading</h2>
@@ -67,14 +67,14 @@ function LandingPage() {
                         <p><a className="btn btn-secondary" href="#">View details &raquo;</a></p>
                     </div>
                     <div className="col-lg-4">
-                    <img alt="main page image of anime variant" aria-label="Placeholder: 140x140" role="img" preserveAspectRatio="xMidYMid slice" focusable="false" width="140" height="140"className="bd-placeholder-img rounded-circle" src="https://picsum.photos/1080/1080" ></img>
+                    <img alt="main page image of anime variant" aria-label="Placeholder: 140x140" role="img" preserveAspectRatio="xMidYMid slice" focusable="false" width="140" height="140"className="bd-placeholder-img rounded-circle" src="https://i.pinimg.com/564x/80/29/53/8029531c433b7d0e2bf48ca6429ef325.jpg" ></img>
 
                         <h2 className="fw-normal">Heading</h2>
                         <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
                         <p><a className="btn btn-secondary" href="#">View details &raquo;</a></p>
                     </div>
                     <div className="col-lg-4">
-                    <img alt="main page image of anime variant" aria-label="Placeholder: 140x140" role="img" preserveAspectRatio="xMidYMid slice" focusable="false" width="140" height="140"className="bd-placeholder-img rounded-circle" src="https://picsum.photos/1080/1080" ></img>
+                    <img alt="main page image of anime variant" aria-label="Placeholder: 140x140" role="img" preserveAspectRatio="xMidYMid slice" focusable="false" width="140" height="140"className="bd-placeholder-img rounded-circle" src="https://i.pinimg.com/564x/53/2f/41/532f41a3dbcc31c7c0efc2bb546464fe.jpg" ></img>
 
                         <h2 className="fw-normal">Heading</h2>
                         <p>And lastly this, the third column of representative placeholder content.</p>
@@ -91,7 +91,7 @@ function LandingPage() {
                         <p className="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
                     </div>
                     <div className="col-md-5">
-                    <img alt="main page image of anime variant" aria-label="Placeholder: 500x500" role="img" preserveAspectRatio="xMidYMid slice" focusable="false" width="500" height="500" className="bd-placeholder-img  bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="https://picsum.photos/1080/1080" ></img>
+                    <img alt="main page image of anime variant" aria-label="Placeholder: 500x500" role="img" preserveAspectRatio="xMidYMid slice" focusable="false" width="500" height="500" className="bd-placeholder-img  bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="https://i.pinimg.com/564x/3b/59/5d/3b595dd4a382006c3c8a383551e65df5.jpg" ></img>
                        
                     </div>
                 </div>
@@ -104,7 +104,7 @@ function LandingPage() {
                         <p className="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
                     </div>
                     <div className="col-md-5 order-md-1">
-                    <img alt="main page image of anime variant" aria-label="Placeholder: 500x500" role="img" preserveAspectRatio="xMidYMid slice" focusable="false" width="500" height="500" className="bd-placeholder-img  bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="https://picsum.photos/1080/1080" ></img>
+                    <img alt="main page image of anime variant" aria-label="Placeholder: 500x500" role="img" preserveAspectRatio="xMidYMid slice" focusable="false" width="500" height="500" className="bd-placeholder-img  bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="https://i.pinimg.com/564x/14/da/fc/14dafcb6265f227c358bcae0bfcb31ef.jpg" ></img>
                        
                     </div>
                 </div>
@@ -117,7 +117,7 @@ function LandingPage() {
                             <p className="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
                         </div>
                         <div className="col-md-5">
-                        <img alt="main page image of anime variant" aria-label="Placeholder: 500x500" role="img" preserveAspectRatio="xMidYMid slice" focusable="false" width="500" height="500" className="bd-placeholder-img  bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="https://picsum.photos/1080/1080" ></img>
+                        <img alt="main page image of anime variant" aria-label="Placeholder: 500x500" role="img" preserveAspectRatio="xMidYMid slice" focusable="false" width="500" height="500" className="bd-placeholder-img  bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="https://i.pinimg.com/564x/44/78/e3/4478e3fdeaf3551fb60d63ed1442e4c8.jpg" ></img>
                        
                         </div>
                     </div>

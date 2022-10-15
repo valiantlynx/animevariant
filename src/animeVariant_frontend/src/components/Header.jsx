@@ -9,7 +9,7 @@ import { animeVariant_backend } from "../../../declarations/animeVariant_backend
 
 
 
-function Header() {
+function Header(props) {
   const { register, handleSubmit } = useForm();
   const [useOwnedGallery, setOwnedGallery] = useState();
   const [listingGallery, setListingGallery] = useState();
@@ -56,9 +56,11 @@ function Header() {
     };
 
   }
-  useEffect(() => {
-    getNFTs();
-  }, []);
+
+  // bring a pop up trying to avoid but i cant run it in a function
+  // useEffect(() => {
+  //   getNFTs();
+  // }, []);
 
 
 
@@ -108,7 +110,7 @@ function Header() {
                 <li onClick={handleSubmit(getNFTs)}><Link className="dropdown-item" to="/minter">Create NFT...</Link></li>
                 <li onClick={handleSubmit(getNFTs)}><Link className="dropdown-item" to="/collection">My NFTs</Link></li>
                 <li><a className="dropdown-item" href="https://5ilw3-6iaaa-aaaak-acxbq-cai.ic0.app/">Wallet</a></li>
-                <li><a className="dropdown-item" href="https://5ilw3-6iaaa-aaaak-acxbq-cai.ic0.app/">Profile</a></li>
+                <li><a className="dropdown-item" href="/profile">Profile</a></li>
                 <li><hr className="dropdown-divider" /></li>
                 <li><a className="dropdown-item" href="#" onClick={handleSubmit(logout)}>Sign out</a></li>
               </ul>
@@ -117,7 +119,7 @@ function Header() {
           </div>
         </div>
       </header>
-      <Body listingGallery={listingGallery} useOwnedGallery={useOwnedGallery} />
+      <Body listingGallery={listingGallery} useOwnedGallery={useOwnedGallery} currentPrincipalID={props.userPrincipal}/>
     </BrowserRouter>
   );
 }

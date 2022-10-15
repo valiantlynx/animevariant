@@ -3,6 +3,8 @@ import { HashRouter, Link, Routes, Route } from "react-router-dom";
 import Minter from "./Minter";
 import Anime from "./Anime";
 import Manga from "./Manga";
+import Profile from "./Profile";
+import Docs from "./Docs";
 import LandingPage from "./LandingPage";
 
 
@@ -17,6 +19,9 @@ function Body(props) {
             <Route path="/anime" element={<Anime />} />
             <Route path="/manga" element={<Manga />} />
             <Route path="/collection" element={props.useOwnedGallery} />
+            <Route path="/docs" element={<Docs currentPrincipalID={props.currentPrincipalID}/>} />
+            <Route path="/profile" element={<Profile currentPrincipalID={props.currentPrincipalID}/>} />
+
         </Routes>
     );
 }

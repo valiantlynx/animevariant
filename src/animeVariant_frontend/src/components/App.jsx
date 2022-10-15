@@ -12,9 +12,9 @@ function App(props) {
     const currentUser = await props.userPrincipal;
     if (currentUser) {
       setCurrentUser(currentUser);
-      //console.log("App user Principal; " + currentUser);
+      console.log("App user Principal; " + currentUser);
     } else {
-      //console.log("Fetch error");
+      console.log("Fetch error");
       // handle error
     }
   }

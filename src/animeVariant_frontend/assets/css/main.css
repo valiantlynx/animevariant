@@ -29,7 +29,7 @@ i:hover {
 }
 
 p {
-    color: #8f8f8f;
+    color: #ffffff;
 }
 
 
@@ -388,3 +388,32 @@ p {
 .disTypography-colorTextSecondary {
     color: rgba(0, 0, 0, 0.54);
 }
+
+
+.principal {
+
+    width: 100%;
+    background: #e6e4e4c4;
+    color: #000000;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    padding: 0px 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  .principal .fa-lock {
+    position: relative;
+    font-size: 25px;
+    color: #000000;
+  }
+  
+  .principal .fa-copy {
+    position: relative;
+    left: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #000000;
+  }
+
