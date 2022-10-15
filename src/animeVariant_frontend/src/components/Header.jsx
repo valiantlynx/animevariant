@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import logo from "../../assets/img/logo.png";
-import { HashRouter, Link } from "react-router-dom";
+import { BrowserRouter, Link } from "react-router-dom";
 import Body from "./Body";
 import { AuthClient } from '@dfinity/auth-client';
 import Gallery from "./Gallery";
@@ -71,7 +71,7 @@ function Header() {
   };
 
   return (
-    <HashRouter>
+    <BrowserRouter forceRefresh={true}>
       <header className="p-3 mb-3 border-bottom">
         <div className="container">
           <div className=" d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -118,7 +118,7 @@ function Header() {
         </div>
       </header>
       <Body listingGallery={listingGallery} useOwnedGallery={useOwnedGallery} />
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
