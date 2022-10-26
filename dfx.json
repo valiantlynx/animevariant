@@ -15,7 +15,8 @@
         "src/animeVariant_frontend/assets",
         "dist/animeVariant_frontend/"
       ],
-      "type": "assets"
+      "type": "assets",
+      "hostname": "stellar-travesseiro-10395d.netlify.app"
     }
   },
   "defaults": {

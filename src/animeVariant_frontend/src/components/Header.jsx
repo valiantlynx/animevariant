@@ -72,8 +72,9 @@ function Header(props) {
 
   };
 
+
   return (
-    <BrowserRouter forceRefresh={true}>
+    <BrowserRouter >
       <header className="p-3 mb-3 border-bottom">
         <div className="container">
           <div className=" d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -95,22 +96,28 @@ function Header(props) {
             <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
               <li><Link to="/anime" className="nav-link px-2 link-secondary">Anime</Link></li>
               <li><Link to="/manga" className="nav-link px-2 link-dark">Manga</Link></li>
-              <li onClick={handleSubmit(getNFTs)}><Link to="/discover" className="nav-link px-2 link-dark">Discover</Link></li>
+              <li>
+                <Link reloadDocument to="/discover" className="nav-link px-2 link-dark" onClick={handleSubmit(login)}>Discover</Link>
+              </li>
             </ul>
 
-            <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+            {/* <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
               <input type="search" className="form-control" placeholder="Search..." aria-label="Search" />
-            </form>
+            </form> */}
 
             <div className="dropdown text-end">
               <a href="#" className="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" className="rounded-circle" />
               </a>
               <ul className="dropdown-menu text-small">
-                <li onClick={handleSubmit(getNFTs)}><Link className="dropdown-item" to="/minter">Create NFT...</Link></li>
-                <li onClick={handleSubmit(getNFTs)}><Link className="dropdown-item" to="/collection">My NFTs</Link></li>
+                <li >
+                  <Link className="dropdown-item" to="/minter" onClick={handleSubmit(login)}>Create NFT...</Link>
+                </li>
+                <li >
+                  <Link reloadDocument className="dropdown-item" to="/collection" onClick={handleSubmit(login)}>My NFTs</Link>
+                </li>
                 <li><a className="dropdown-item" href="https://5ilw3-6iaaa-aaaak-acxbq-cai.ic0.app/">Wallet</a></li>
-                <li><a className="dropdown-item" href="/profile">Profile</a></li>
+                <li><a onClick={handleSubmit(login)} className="dropdown-item" href="/profile">Profile</a></li>
                 <li><hr className="dropdown-divider" /></li>
                 <li><a className="dropdown-item" href="#" onClick={handleSubmit(logout)}>Sign out</a></li>
               </ul>
@@ -119,8 +126,8 @@ function Header(props) {
           </div>
         </div>
       </header>
-      <Body listingGallery={listingGallery} useOwnedGallery={useOwnedGallery} currentPrincipalID={props.userPrincipal}/>
-    </BrowserRouter>
+      <Body listingGallery={listingGallery} useOwnedGallery={useOwnedGallery} currentPrincipalID={props.userPrincipal} />
+    </BrowserRouter >
   );
 }
 
