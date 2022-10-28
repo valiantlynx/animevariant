@@ -1,0 +1,193 @@
+/*tag's*/
+
+body {
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: #141416 !important;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+
+}
+
+h1,
+h2,
+h3 {
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 3.5rem;
+    line-height: 1.5;
+}
+
+i:hover {
+    color: rgb(241, 36, 105);
+}
+
+p {
+    color: #8f8f8f;
+}
+
+
+/*classes's*/
+
+.colored_section {
+    --main-bg-color: #189AB4;
+    color: #fff;
+}
+
+.white_section {
+    --bg-color: #fff;
+}
+
+.big_heading {
+    font-weight: 900;
+    font-size: 3.5rem;
+    line-height: 1.5;
+}
+
+.container-fluid {
+    padding: 3% 15% 7%;
+}
+
+.features-container {
+    padding: 3% 15%;
+}
+
+.row {
+    padding-top: calc(var(--bs-gutter-x) * .5);
+    padding-bottom: calc(var(--bs-gutter-x) * .5);
+}
+
+.content_box {
+    padding: 100px;
+}
+
+.big_icon {
+    color: #ef8172;
+    padding: 10%;
+}
+
+.pricing_table {
+    padding-top: 3%;
+}
+
+.social_icon {
+    padding: 20px;
+    color: #ff4c68;
+    text-decoration: none;
+}
+
+
+/*id's*/
+
+#title {
+    background-color: var(--main-bg-color);
+    height: 70%;
+    text-align: left;
+}
+
+#main_img {
+    transform: rotate(24deg);
+    width: 20%;
+    position: absolute;
+    right: 250px;
+}
+
+#features {
+    background-color: var(--bg-color);
+    position: relative;
+    z-index: 1;
+}
+
+#press {
+    background-color: var(--main-bg-color);
+}
+
+#pricing {
+    padding: 10%;
+}
+
+#cta {
+    padding: 5% 20%;
+    background-color: var(--main-bg-color);
+}
+
+#footer {
+    padding: 5% 20%;
+    background-color: var(--bg-color);
+}
+
+
+/* navigation bar */
+
+.navbar {
+    padding-bottom: 4.5rem;
+    background-color: #141416 !important;
+}
+
+.nav-item {
+    padding: 0 18px;
+}
+
+.nav-link {
+    font-family: "Montserrat", "san-serif";
+    font-size: 1.2rem;
+}
+
+.navbar-brand {
+    font-family: "Ubuntu", "sans-serif";
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+.company_name {
+    font-size: 2.5rem;
+}
+
+.press_image {
+    margin: 20px;
+    width: 15%;
+}
+
+
+/* download buttons*/
+
+.download-button {
+    margin: 5% 3% 5% 0;
+}
+
+
+/* Testimonials section */
+
+.comments {
+    padding: 3% 15%;
+    background-color: var(--main-bg-color);
+}
+
+.testimonial-image {
+    width: 10%;
+    border-radius: 100%;
+    margin: 20px;
+}
+
+@media (max-width: 992px) {
+    #title {
+        text-align: center;
+    }
+
+    #main_img {
+        position: static;
+        transform: rotate(0);
+        width: 100%;
+    }
+}
+
+.selector-for-some-widget {
+    box-sizing: content-box;
+}

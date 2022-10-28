@@ -16,10 +16,9 @@
     "copy:types": "rsync -avr .dfx/$(echo ${DFX_NETWORK:-'**'})/canisters/** --exclude='assets/' --exclude='idl/' --exclude='*.wasm' --exclude='*.most' --delete src/declarations"
   },
   "devDependencies": {
-    "@dfinity/agent": "0.13.3",
-    "@dfinity/candid": "0.13.3",
-    "@dfinity/principal": "0.13.3",
-    "@types/node": "^18.11.0",
+    "@dfinity/agent": "0.14.0",
+    "@dfinity/candid": "0.14.0",
+    "@dfinity/principal": "0.14.0",
     "assert": "2.0.0",
     "buffer": "6.0.3",
     "copy-webpack-plugin": "^9.0.1",
@@ -40,7 +39,7 @@
     "util": "0.12.4",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.10.1"
+    "webpack-dev-server": "^4.11.1"
   },
   "engines": {
     "node": "^12 || ^14 || ^16 || ^18"
@@ -52,14 +51,9 @@
     "last 2 edge version"
   ],
   "dependencies": {
-    "@dfinity/auth-client": "0.13.2",
-    "@dfinity/authentication": "0.13.2",
-    "@dfinity/identity": "0.13.2",
-    "@dfinity/service-worker": "^1.2.13",
-    "@emotion/react": "^11.10.4",
-    "@emotion/styled": "^11.10.4",
-    "@mui/lab": "^5.0.0-alpha.101",
-    "@mui/material": "^5.10.7",
+    "@dfinity/auth-client": "0.14.0",
+    "@dfinity/authentication": "0.14.0",
+    "@dfinity/identity": "0.14.0",
     "bootstrap": "^5.2.1",
     "file-loader": "^6.2.0",
     "fs": "^0.0.1-security",
