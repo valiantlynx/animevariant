@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Actor, HttpAgent } from "@dfinity/agent";
-import { createActor as NFTCreateActor } from "../../../declarations/nft";
-import { createActor as variantCreateActor } from "../../../declarations/variant_backend";
+import { createActor as NFTCreateActor } from "../../../../declarations/nft";
+import { createActor as variantCreateActor } from "../../../../declarations/variant_backend";
 import Button from "./Button";
-import { animeVariant_backend, canisterId, createActor } from "../../../declarations/animeVariant_backend";
+import { animeVariant_backend, canisterId, createActor } from "../../../../declarations/animeVariant_backend";
 import { AuthClient } from '@dfinity/auth-client';
 import { Principal } from "@dfinity/principal";
 import PriceLabel from "./PriceLabel";

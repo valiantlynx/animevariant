@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./components/App";
+import App from "./components/main/App";
 import { AuthClient } from '@dfinity/auth-client';
 import { Principal } from "@dfinity/principal";
 

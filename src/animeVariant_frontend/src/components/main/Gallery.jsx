@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Masonry from 'react-masonry-component';
-import Item from "./Item";
-import random from "lodash/random";
 
+import Item from "./Item";
 
 function Gallery(props) {
 

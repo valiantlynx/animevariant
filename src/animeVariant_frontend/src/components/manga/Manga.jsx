@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Sidebar from "./Sidebar";
+import Sidebar from "../main/Sidebar";
 import MangaMainContent from "./MangaMainContent";
 import "bootstrap/dist/css/bootstrap.min.css";
 
