@@ -97,13 +97,9 @@ function Header(props) {
               <li><Link to="/anime" className="nav-link px-2 link-secondary">Anime</Link></li>
               <li><Link to="/manga" className="nav-link px-2 link-dark">Manga</Link></li>
               <li>
-                <Link reloadDocument to="/discover" className="nav-link px-2 link-dark" onClick={handleSubmit(login)}>Discover</Link>
+                <Link reloadDocument to="/discover" className="nav-link px-2 link-dark" onClick={handleSubmit(getNFTs)}>Discover</Link>
               </li>
             </ul>
-
-            {/* <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-              <input type="search" className="form-control" placeholder="Search..." aria-label="Search" />
-            </form> */}
 
             <div className="dropdown text-end">
               <a href="#" className="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -111,20 +107,21 @@ function Header(props) {
               </a>
               <ul className="dropdown-menu text-small">
                 <li >
-                  <Link className="dropdown-item" to="/minter" onClick={handleSubmit(login)}>Create NFT...</Link>
+                  <Link className="dropdown-item" to="/minter" onClick={handleSubmit(getNFTs)}>Create NFT...</Link>
                 </li>
                 <li >
-                  <Link reloadDocument className="dropdown-item" to="/collection" onClick={handleSubmit(login)}>My NFTs</Link>
+                  <Link reloadDocument className="dropdown-item" to="/collection" onClick={handleSubmit(getNFTs)}>My NFTs</Link>
                 </li>
                 <li><a className="dropdown-item" href="https://5ilw3-6iaaa-aaaak-acxbq-cai.ic0.app/">Wallet</a></li>
-                <li><a onClick={handleSubmit(login)} className="dropdown-item" href="/profile">Profile</a></li>
+                <li><a onClick={handleSubmit(getNFTs)} className="dropdown-item" href="/profile">Profile</a></li>
                 <li><hr className="dropdown-divider" /></li>
                 <li><a className="dropdown-item" href="#" onClick={handleSubmit(logout)}>Sign out</a></li>
               </ul>
             </div>
 
           </div>
-        </div>
+        </div> 
+
       </header>
       <Body listingGallery={listingGallery} useOwnedGallery={useOwnedGallery} currentPrincipalID={props.userPrincipal} />
     </BrowserRouter >

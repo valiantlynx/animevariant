@@ -55,7 +55,7 @@ function Footer() {
         </div>
 
         <div className="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-          <p>&copy; 2022 Anime Variant, Inc. All rights reserved.</p>
+          <p>&copy; {year} Anime Variant, Inc. All rights reserved.</p>
           <ul className="list-unstyled d-flex">
           <li className="ms-3"> <a className="social_icon" href="https://www.youtube.com/channel/UCowp4JkKtviDPKEejXcn1-g"><i className="fa-brands fa-twitter" width="24" height="24"></i></a></li>
             <li className="ms-3"> <a className="social_icon" href="https://www.youtube.com/channel/UCowp4JkKtviDPKEejXcn1-g"><i className="fa-brands fa-instagram" width="24" height="24"></i></a></li>
