@@ -1,28 +1,67 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 
 function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <div id="footer">
-      <footer>
-        <Container fluid="md">
-          <Row>
-            <Col>
-              <p>
-                The Internet Computer's largest digital marketplace for crypto
-                collectibles, anime, manga and non-fungible tokens (NFTs). Buy, sell, and
-                discover exclusive digital items. Are you a creator make your art worth something?
-              </p>
-            </Col>
-            <Col>
-              <p>Copyright ⓒ {year} Valiantlynx</p>
-            </Col>
-          </Row>
-        </Container>
+
+    <div className="container">
+      <footer className="py-5">
+        <div className="row">
+          <div className="col-6 col-md-2 mb-3">
+            <h5>MANGA</h5>
+            <ul className="nav flex-column">
+              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Home - Anime</a></li>
+              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Features</a></li>
+              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Royalties</a></li>
+              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">FAQs</a></li>
+              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">About</a></li>
+            </ul>
+          </div>
+
+          <div className="col-6 col-md-2 mb-3">
+            <h5>NFT</h5>
+            <ul className="nav flex-column">
+              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Home - Nft</a></li>
+              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Royalties</a></li>
+              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Pricing</a></li>
+              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">FAQs</a></li>
+              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">About</a></li>
+            </ul>
+          </div>
+
+          <div className="col-6 col-md-2 mb-3">
+            <h5>ANIME</h5>
+            <ul className="nav flex-column">
+              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Home - Manga</a></li>
+              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Royalties</a></li>
+              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Pricing</a></li>
+              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">FAQs</a></li>
+              <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">About</a></li>
+            </ul>
+          </div>
+
+          <div className="col-md-5 offset-md-1 mb-3">
+            <form>
+              <h5>Subscribe to our newsletter</h5>
+              <p>Monthly digest of what's new and exciting from us.</p>
+              <div className="d-flex flex-column flex-sm-row w-100 gap-2">
+                <label htmlFor="newsletter1" className="visually-hidden">Email address</label>
+                <input id="newsletter1" type="text" className="form-control" placeholder="Email address" />
+                <button className="btn btn-primary" type="button">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div className="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+          <p>&copy; {year} Anime Variant, Inc. All rights reserved.</p>
+          <ul className="list-unstyled d-flex">
+          <li className="ms-3"> <a className="social_icon" href="https://www.youtube.com/channel/UCowp4JkKtviDPKEejXcn1-g"><i className="fa-brands fa-twitter" width="24" height="24"></i></a></li>
+            <li className="ms-3"> <a className="social_icon" href="https://www.youtube.com/channel/UCowp4JkKtviDPKEejXcn1-g"><i className="fa-brands fa-instagram" width="24" height="24"></i></a></li>
+            <li className="ms-3"> <a className="social_icon" href="https://www.youtube.com/channel/UCowp4JkKtviDPKEejXcn1-g"><i className="fa-brands fa-facebook" width="24" height="24"></i></a></li>
+          </ul>
+        </div>
       </footer>
     </div>
   );

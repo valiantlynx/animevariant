@@ -1,6 +1,6 @@
 import Cycles "mo:base/ExperimentalCycles";
 import Debug "mo:base/Debug";
-import NFTActorClass "../NFT/nft";
+import NFTActorClass "../nft/nft";
 import Principal "mo:base/Principal";
 import HashMap "mo:base/HashMap";
 import List "mo:base/List";

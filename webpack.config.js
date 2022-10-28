@@ -67,6 +67,7 @@ module.exports = {
   output: {
     filename: "index.js",
     path: path.join(__dirname, "dist", frontendDirectory),
+    publicPath: '/'
   },
 
   // Depending in the language or framework you are using for
@@ -77,19 +78,21 @@ module.exports = {
   module: {
     rules: [
       { test: /\.(ts|tsx|jsx)$/, loader: "ts-loader" },
-      { test: /\.css$/, use: ['style-loader','css-loader'] }, {
-       test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
-       use: [
-         {
-           loader: 'url-loader?limit=100000',
-           options: {
-             limit: 100000
-           },
-         },
-       ],
-     },
+      { test: /\.css$/, use: ['style-loader', 'css-loader'] }, {
+        test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+        use: [
+          {
+            loader: 'url-loader?limit=100000 ',
+
+            options: {
+              emitWarning: true,
+              limit: 100000
+            },
+          },
+        ],
+      },
     ],
-   },
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, frontend_entry),
@@ -106,6 +109,7 @@ module.exports = {
   ],
   // proxy /api to port 8000 during development
   devServer: {
+    historyApiFallback: true,
     proxy: {
       "/api": {
         target: "http://127.0.0.1:8000",

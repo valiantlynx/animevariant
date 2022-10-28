@@ -12,7 +12,7 @@ function Anime() {
     //get the top anime
     const getTopAnime = async () => {
         const temp = await fetch('https://api.jikan.moe/v4/top/anime')
-        .then(res => res.json());
+            .then(res => res.json());
         //console.log(temp);
 
         setTopAnime(temp.data.slice(0, 5));
@@ -33,27 +33,34 @@ function Anime() {
 
     //fetch the anime from the database
     async function fetchAnime(search) {
-        const temp = await fetch('https://api.jikan.moe/v4/anime?limit=10&q=' + search +'&order_by=title&sort=asc')
-        .then(res => res.json());
+        const temp = await fetch('https://api.jikan.moe/v4/anime?limit=10&q=' + search + '&order_by=title&sort=asc')
+            .then(res => res.json());
         //console.log(temp);
 
         setAnimeList(temp.data);
-        
+
     }
 
     return (
-        <div className="">
-            <div className="">
+        <div className="App container-fluid">
+            <header width="100%">
+                <h1>The<strong>Anime</strong>Database</h1>
+            </header>
+
+            <div className="row content-wrap">
+                
                 <Sidebar
+                    className="col"
                     topContent={topAnime} />
-                <AnimeMainContent 
-                    handleSearch={handleSearch} 
+                <AnimeMainContent
+                    className="col"
+                    handleSearch={handleSearch}
                     search={search}
                     setSearch={setSearch}
-                    animeList={animeList}/>
+                    animeList={animeList} />
             </div>
 
-            
+
         </div>
     );
 }

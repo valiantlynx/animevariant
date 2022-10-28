@@ -160,7 +160,7 @@ dfx canister --network ic call animeVariant_backend mint '(vec {137; 80; 78; 71;
 2. List the item into mapOfListings:
 
 ```
-dfx canister --network ic call animeVariant_backend listItem '(principal "2jncw-giaaa-aaaak-acxrq-cai", 3)'
+dfx canister --network ic call animeVariant_backend listItem '(principal "qhbym-qaaaa-aaaaa-aaafq-cai", 3)'
 ```
 
 3. Get animeVariant_backend canister ID:
@@ -172,7 +172,7 @@ dfx canister id animeVariant_backend
 4. Transfer NFT to animeVariant_backend:
 
 ```
-dfx canister --network ic call 2jncw-giaaa-aaaak-acxrq-cai transferOwnership '(principal "55mhw-7aaaa-aaaak-acxca-cai", true)'
+dfx canister --network ic call qhbym-qaaaa-aaaaa-aaafq-cai transferOwnership '(principal "rrkah-fqaaa-aaaaa-aaaaq-cai", true)'
 ```
 
 # Conneting to the Token Canister

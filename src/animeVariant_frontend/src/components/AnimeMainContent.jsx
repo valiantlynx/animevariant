@@ -1,12 +1,12 @@
 import React from "react";
-import AnimeCard from "./AnimeCard";
+import Card from "./Card";
 import Gallery from "./Gallery";
 
 function MainContent(props) {
     function content() {
         return (
             props.animeList.map(content => (
-                <AnimeCard
+                <Card
                     content={content}
                     key={content.mal_id} />
             ))
@@ -15,9 +15,9 @@ function MainContent(props) {
     }
     return (
         <main>
-            <div className="">
+            <div className="main-head">
                 <form
-                    className=""
+                    className="search-box"
                     onSubmit={props.handleSearch}>
                     <input
                         type="search"
@@ -27,7 +27,7 @@ function MainContent(props) {
                         onChange={e => props.setSearch(e.target.value)} />
                 </form>
             </div>
-            <div >
+            <div className="anime-list" >
                 <Gallery content={content()}/>               
             </div>
         </main>
