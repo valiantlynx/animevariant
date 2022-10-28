@@ -1,8 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Minter from "./Minter";
-import Anime from "./Anime";
-import Manga from "./Manga";
+import Anime from "../anime/Anime";
+import Manga from "../manga/Manga";
 import Profile from "./Profile";
 import Docs from "./Docs";
 import LandingPage from "./LandingPage";

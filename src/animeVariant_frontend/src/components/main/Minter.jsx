@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { animeVariant_backend, canisterId, createActor } from "../../../declarations/animeVariant_backend";
+import { animeVariant_backend, canisterId, createActor } from "../../../../declarations/animeVariant_backend";
 import { AuthClient } from '@dfinity/auth-client';
 import Item from "./Item";
-import Button from '../components/Button';
+import Button from '../main/Button';
 
 
 function Minter() {

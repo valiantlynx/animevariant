@@ -1,14 +1,14 @@
 import React from "react";
-import Card from "./Card";
-import Gallery from "./Gallery";
+import Card from "../main/Card";
+import Gallery from "../main/Gallery";
 
 function MainContent(props) {
     function content() {
-        return (
-            props.animeList.map(content => (
-                <Card
+        return(
+            props.mangaList.map(content => (
+                <Card 
                     content={content}
-                    key={content.mal_id} />
+                    key={content.mal_id}/>
             ))
         )
 
@@ -27,7 +27,7 @@ function MainContent(props) {
                         onChange={e => props.setSearch(e.target.value)} />
                 </form>
             </div>
-            <div className="anime-list" >
+            <div className="anime-list container-fluid" >
                 <Gallery content={content()}/>               
             </div>
         </main>

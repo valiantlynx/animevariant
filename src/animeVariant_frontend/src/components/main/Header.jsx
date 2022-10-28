@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import logo from "../../assets/img/logo.png";
+import logo from "../../../assets/img/logo.png";
 import { BrowserRouter, Link } from "react-router-dom";
 import Body from "./Body";
 import { AuthClient } from '@dfinity/auth-client';
 import Gallery from "./Gallery";
-import { animeVariant_backend } from "../../../declarations/animeVariant_backend";
+import { animeVariant_backend } from "../../../../declarations/animeVariant_backend";
 
 
 
