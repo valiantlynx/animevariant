@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import logo from "../../../assets/img/logo.png";
+import logo from "../../../assets/images/logo.png";
 import { BrowserRouter, Link } from "react-router-dom";
 import Body from "./Body";
 import { AuthClient } from '@dfinity/auth-client';
