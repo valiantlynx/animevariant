@@ -75,6 +75,47 @@ function Header(props) {
 
   return (
     <BrowserRouter >
+      <header class="header-area header-sticky">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <nav class="main-nav">
+
+                <a href="index.html" class="logo">
+                  <img src="images/logo.png" alt="" />
+
+                </a>
+
+                <ul class="nav">
+                  <li><a href="#" class="active">Home</a></li>
+                  <li>
+                    <Link reloadDocument to="/discover" className="nav-link px-2 link-dark" onClick={handleSubmit(getNFTs)}>Explore</Link>
+                  </li>
+                  <li>
+                    <Link to="/manga" className="nav-link px-2 link-dark">Manga</Link>
+                  </li>
+                  <li><a href="details.html">Item Details</a></li>
+                  <li><a href="author.html">Author</a></li>
+                  <li><a className="dropdown-item" href="https://5ilw3-6iaaa-aaaak-acxbq-cai.ic0.app/">Wallet</a></li>
+                <li><a onClick={handleSubmit(getNFTs)} className="dropdown-item" href="/profile">Profile</a></li>
+                  <li >
+                  <Link reloadDocument className="dropdown-item" to="/collection" onClick={handleSubmit(getNFTs)}>My NFTs</Link>
+                </li>
+                  <li >
+                    <Link className="dropdown-item" to="/minter" onClick={handleSubmit(getNFTs)}>Create Yours</Link>
+                  </li>
+                  <li><a className="dropdown-item" href="#" onClick={handleSubmit(logout)}>Sign out</a></li>
+                </ul>
+                <a class='menu-trigger'>
+                  <span>Menu</span>
+                </a>
+
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+
       <header className="p-3 mb-3 border-bottom">
         <div className="container">
           <div className=" d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -94,11 +135,9 @@ function Header(props) {
             </Link>
 
             <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-              <li><Link to="/anime" className="nav-link px-2 link-secondary">Anime</Link></li>
-              <li><Link to="/manga" className="nav-link px-2 link-dark">Manga</Link></li>
-              <li>
-                <Link reloadDocument to="/discover" className="nav-link px-2 link-dark" onClick={handleSubmit(getNFTs)}>Discover</Link>
-              </li>
+              <li></li>
+
+
             </ul>
 
             <div className="dropdown text-end">
@@ -106,21 +145,16 @@ function Header(props) {
                 <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" className="rounded-circle" />
               </a>
               <ul className="dropdown-menu text-small">
-                <li >
-                  <Link className="dropdown-item" to="/minter" onClick={handleSubmit(getNFTs)}>Create NFT...</Link>
-                </li>
-                <li >
-                  <Link reloadDocument className="dropdown-item" to="/collection" onClick={handleSubmit(getNFTs)}>My NFTs</Link>
-                </li>
-                <li><a className="dropdown-item" href="https://5ilw3-6iaaa-aaaak-acxbq-cai.ic0.app/">Wallet</a></li>
-                <li><a onClick={handleSubmit(getNFTs)} className="dropdown-item" href="/profile">Profile</a></li>
+
+                
+                
                 <li><hr className="dropdown-divider" /></li>
-                <li><a className="dropdown-item" href="#" onClick={handleSubmit(logout)}>Sign out</a></li>
+               
               </ul>
             </div>
 
           </div>
-        </div> 
+        </div>
 
       </header>
       <Body listingGallery={listingGallery} useOwnedGallery={useOwnedGallery} currentPrincipalID={props.userPrincipal} />
