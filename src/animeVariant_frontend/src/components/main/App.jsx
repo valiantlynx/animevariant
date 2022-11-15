@@ -26,9 +26,11 @@ function App(props) {
        {/* 
       <Minter />
       <Item id={NFTID}/> 
-      <Footer /> */}
+ */}
       <Loader />
+     
       <Header userPrincipal={currentUser}/>
+      <Footer /> 
 
       
     </div>
