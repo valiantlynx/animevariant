@@ -17,6 +17,7 @@ h1,
 h2,
 h3 {
     font-weight: bold;
+    color: #fff;
 }
 
 h2 {
@@ -184,6 +185,10 @@ p {
     margin: 0;
     box-sizing: border-box;
 }
+
+
+
+
 
 .disPaper-root {
     color: rgba(0, 0, 0, 0.87);
@@ -353,6 +358,7 @@ p {
 
 .disCardContent-root {
     padding: 16px;
+    background-color: #fff;
 }
 
 .disTypography-root {
@@ -390,6 +396,12 @@ p {
 }
 
 
+
+
+
+
+
+
 .principal {
 
     width: 100%;
@@ -416,4 +428,240 @@ p {
     cursor: pointer;
     color: #000000;
   }
+
+  
+  .typing-demo {
+    width: 22ch;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 2em;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
+
+
+  
+body
+{
+  background-color:#141019;
+  background: radial-gradient(at 50% -20%, #908392, #0d060e) fixed;
+}
+
+
+#handboy
+{
+   animation: swing ease-in-out 1.3s infinite alternate;
+    transform-origin: 98% 98%;
+    transform-box: fill-box;
+    
+}
+
+
+#girllight
+{
+   animation: swing ease-in-out 1.3s infinite alternate;
+    transform-origin: 0% 97%;
+    transform-box: fill-box;
+}
+
+#hairgirl
+{
+    animation: swinghair ease-in-out 1.3s infinite alternate;
+   transform-origin: 60% 0%;
+    transform-box: fill-box;
+  
+}
+
+#zero
+{
+  transform-origin:bottom;
+  transform-box:fill-box;
+  
+}
+
+/*************swing************/
+@keyframes swing {
+    0% { transform: rotate(10deg); }
+    100% { transform: rotate(-10deg); }
+}
+
+
+/*************swing hair************/
+@keyframes swinghair {
+    0% { transform: rotate(6deg); }
+    100% { transform: rotate(-6deg); }
+}
+
+
+
+
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+
+body {
+  margin: 0;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+}
+
+#instructions {
+  display: none;
+}
+
+#results,
+body:hover #instructions {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(20, 20, 20, 0.75);
+}
+
+a:visited {
+  color: inherit;
+}
+
+#results {
+  display: none;
+  cursor: default;
+}
+
+#results .content,
+#instructions .content {
+  max-width: 300px;
+  padding: 50px;
+  border-radius: 20px;
+}
+
+#results {
+}
+
+#score {
+  position: absolute;
+  color: white;
+  font-size: 3em;
+  font-weight: bold;
+  top: 30px;
+  right: 30px;
+}
+
+#youtube,
+#skillshare,
+#youtube-card,
+#skillshare-card {
+  display: none;
+  color: black;
+}
+
+@media (min-height: 425px) {
+  /** Youtube logo by https://codepen.io/alvaromontoro */
+  #youtube,
+  #skillshare {
+    z-index: 50;
+    width: 100px;
+    height: 70px;
+    position: fixed;
+    bottom: 20px;
+    transform: scale(0.8);
+    transition: transform 0.5s;
+  }
+
+  #youtube {
+    display: block;
+    background: red;
+    right: 20px;
+    border-radius: 50% / 11%;
+  }
+
+  #skillshare {
+    display: block;
+    left: 20px;
+    color: white;
+    font-size: 1.8em;
+    font-weight: extra-bold;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+  }
+
+  #youtube:hover,
+  #youtube:focus {
+    transform: scale(0.9);
+    color: black;
+  }
+
+  #skillshare:hover,
+  #skillshare:focus {
+    transform: scale(0.9);
+    color: #002333;
+  }
+
+  #youtube::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 7.5%;
+    left: -6%;
+    background: red;
+    border-radius: 9% / 50%;
+  }
+
+  #youtube::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    width: 45px;
+    height: 30px;
+    border: 15px solid transparent;
+    box-sizing: border-box;
+    border-left: 30px solid white;
+  }
+
+  #youtube span {
+    font-size: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  #youtube:hover + #youtube-card,
+  #skillshare:hover + #skillshare-card {
+    z-index: 49;
+    display: block;
+    position: fixed;
+    bottom: 12px;
+    width: 300px;
+    background-color: white;
+  }
+
+  #youtube:hover + #youtube-card {
+    right: 10px;
+    padding: 25px 130px 25px 25px;
+  }
+
+  #skillshare:hover + #skillshare-card {
+    left: 10px;
+    padding: 25px 25px 25px 130px;
+  }
+}
 

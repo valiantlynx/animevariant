@@ -26,7 +26,8 @@ function Profile(props) {
                         {props.currentPrincipalID}
                         <i className="fa-solid fa-copy"></i>
                     </span>
-                    {copySuccess}
+                    <p className='text-warning'>  {copySuccess}</p>
+
                 </center>
 
 

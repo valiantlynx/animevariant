@@ -21,8 +21,8 @@ function App(props) {
   // const NFTID = "rrkah-fqaaa-aaaaa-aaaaq-cai";
 
   return (
-    <div className="">
-      <Header userPrincipal={currentUser}/>
+    <div className="" style={{ backgroundColor: "#27144A" }}>
+      <Header currentPrincipalID={currentUser}/>
       {/* <Minter />
       <Item id={NFTID}/> */}
       <Footer />
