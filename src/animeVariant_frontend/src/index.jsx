@@ -79,7 +79,7 @@ const init = async () => {
   //   );
   // }
 
-  serviceWorkerRegistration
+  serviceWorkerRegistration.register();
 
 };
 

@@ -70,6 +70,15 @@
 
 
     <div id="root"></div>
+    <!-- <script>
+        if('serviceWorker' in navigator){
+            window.addEventListener('load', () => {
+                navigator.serviceWorkerRegistration.register('/service-worker.js')
+                    .then((reg) => console.log("Success: ", reg.scope))
+                    .catch((err) => console.log('failure: ', err));
+            })
+        }
+    </script> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js"></script>
