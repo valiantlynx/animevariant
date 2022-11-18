@@ -2,10 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./components/main/App";
 import { AuthClient } from '@dfinity/auth-client';
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import WelcomeAnimasjon from "./components/main/WelcomeAnimasjon";
 import Particle from "./components/main/Particle";
 import Button from './components/main/Button';
 import FileNotFound from "./components/main/FileNotFound";
+
 
 //const CURRENT_USER_ID = Principal.fromText("ryjl3-tyaaa-aaaaa-aaaba-cai"); //principal
 
@@ -14,17 +16,18 @@ const init = async () => {
 
   const authClient = await AuthClient.create();
   const identity = await authClient.getIdentity();
-    const userPrincipal = identity.getPrincipal().toString();
-    const root = ReactDOM.createRoot(document.getElementById("root"));
-    root.render(
-      <div>
+  const userPrincipal = identity.getPrincipal().toString();
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(
+    <div>
 
-        <React.StrictMode>
-          <App userPrincipal={userPrincipal} />
-        </React.StrictMode>
+      <React.StrictMode>
+        <App userPrincipal={userPrincipal} />
+      </React.StrictMode>
 
-      </div>
-    );
+    </div>
+  );
+
 
   // //if user is already logged in within 8 days
   // if (authClient.isAuthenticated() && ((await authClient.getIdentity().getPrincipal().isAnonymous()) === false)) {
@@ -40,11 +43,11 @@ const init = async () => {
   //       <h3 className="text-info w-100">You need an Internet identity to see the website.</h3>
   //       <h5 className="text-info w-100" >Dont worry no personal information is required. Make one by cliking LOGIN</h5>
   //       <Button handleClick={login} text="login" />
-        
+
   //     </div>
 
   //     //<Particle />
- 
+
 
   //   );
   // }
@@ -76,7 +79,7 @@ const init = async () => {
   //   );
   // }
 
-
+  serviceWorkerRegistration
 
 };
 

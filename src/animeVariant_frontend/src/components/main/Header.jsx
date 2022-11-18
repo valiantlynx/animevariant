@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import logo from "../../../assets/img/logo.jpg";
+import logo from "../../../assets/img/logo.webp";
 import { HashRouter, Link } from "react-router-dom";
 import Body from "./Body";
 import { AuthClient } from '@dfinity/auth-client';
@@ -73,8 +73,8 @@ function Header(props) {
 
   return (
     <HashRouter>
-      <header className="p-3 mb-3 border-bottom" >
-        <div className="container" >
+      <header className="p-3 mb-3 " >
+        <div className="container-fluid" >
           <div className=" d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <Link
               to="/"
@@ -88,10 +88,10 @@ function Header(props) {
                 height="80"
                 role="img"
 
-                aria-label="Bootstrap" /> Anime Variant
+                aria-label="Bootstrap" />   Anime Variant
             </Link>
 
-            <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <ul className="nav align-items-center col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
               <li><Link to="/anime" className="nav-link px-2 link-light">Anime</Link></li>
               <li><Link to="/manga" className="nav-link px-2 link-light">Manga</Link></li>
               <li onClick={handleSubmit(getNFTs)}><Link to="/discover" className="nav-link px-2 link-light">Discover</Link></li>

@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from "../../../assets/img/logo.jpg";
+import logo from "../../../assets/img/logo.webp";
 import ThreeFeaturesSimpleCard from "./ThreeFeaturesSimpleCard"
 
 

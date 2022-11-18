@@ -1,8 +1,8 @@
 import React from 'react'
 import ThreeBigFeaturesSimpleCard from './ThreeBigFeaturesSimpleCard'
-import image from "../../../assets/img/unsplash-photo-1.jpg";
-import image2 from "../../../assets/img/unsplash-photo-3.jpg";
-import image1 from "../../../assets/img/reactD.jpeg";
+import image from "../../../assets/img/unsplash_image.webp";
+import image2 from "../../../assets/img/unsplash_image.webp";
+import image1 from "../../../assets/img/reactD.webp";
 
 export default function ThreeBigFeatures() {
     const priceLeft = "partial"

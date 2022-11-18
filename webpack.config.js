@@ -79,7 +79,7 @@ module.exports = {
     rules: [
       { test: /\.(ts|tsx|jsx)$/, loader: "ts-loader" },
       { test: /\.css$/, use: ['style-loader', 'css-loader'] }, {
-        test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+        test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg|webp)(\?[a-z0-9=.]+)?$/,
         use: [
           {
             loader: 'url-loader?limit=100000 ',
@@ -91,6 +91,7 @@ module.exports = {
           },
         ],
       },
+
     ],
   },
   plugins: [

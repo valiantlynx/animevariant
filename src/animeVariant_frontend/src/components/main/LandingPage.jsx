@@ -37,10 +37,11 @@ function LandingPage() {
                                 >
 
                                     <img
+                                    className="w-100"
                                    
                                         src="https://www.quizexpo.com/wp-content/uploads/2021/02/cover-5-850x491.jpg"
                                         alt="The Best Chill Hip Hop Lo-Fi Music for Study and Relaxing"
-                                        style={{ position: 'absolute', top: '0px', width: '90%', height: '90%' }}
+                                        style={{ position: 'absolute', top: '0px'}}
                                         ></img>
                                 </div>
                             </div>
