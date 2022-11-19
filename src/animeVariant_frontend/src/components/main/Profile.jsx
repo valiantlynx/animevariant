@@ -18,7 +18,7 @@ function Profile(props) {
                     <h1>Your<strong>Profile</strong>account</h1>
                 </header>
                 <center>
-                    <h6>Your account's Principal ID:</h6>
+                    <h6 className='text-warning'>Your account's Principal ID:</h6>
                     <span
                         className="principal "
                         onClick={() => copyToClipBoard(props.currentPrincipalID)}

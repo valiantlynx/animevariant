@@ -7,11 +7,12 @@
         "name": "valiantlynx",
         "url": "http://valiantlynx.com"
     },
-    "start_url": "assets/index.html",
+    "start_url": ".",
     "display": "standalone",
     "orientation": "any",
     "background_color": "#FFFFFF",
     "theme_color": "#27144A",
+    "scope": "/",
     "related_applications": [
         {
             "platform": "play",

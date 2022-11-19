@@ -15,11 +15,11 @@ function Docs(props) {
         <header>
             <div className="blue window" id="logo">
                 <header>
-                    <h1>Your<strong>Profile</strong>account</h1>
+                    <h1>The<strong>Docs</strong>Page</h1>
                 </header>
 
                 <center>
-                    <h6>Your acount's Principal ID:</h6>
+                    <h6 className='text-warning' >Your acount's Principal ID:</h6>
                     <span
                         className="principal "
                         onClick={() => copyToClipBoard(props.currentPrincipalID)}

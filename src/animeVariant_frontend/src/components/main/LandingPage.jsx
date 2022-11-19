@@ -26,9 +26,12 @@ function LandingPage() {
                                 <h1 className="BackgroundAsImage__Heading-sc-64ha7n-7 bpRmqM"><span>Anime and Manga
                                 </span><br /><span
                                     className="BackgroundAsImage__SlantedBackground-sc-64ha7n-8 jXSXUY">
-                                        Marketplace</span></h1><button
-                                            className="BackgroundAsImage__PrimaryAction-sc-64ha7n-10 jQtzpG">Get Started
-                                </button>
+                                        Marketplace</span></h1>
+                                <a href="#/manga">
+                                    <button
+                                        className="BackgroundAsImage__PrimaryAction-sc-64ha7n-10 jQtzpG">Get Started
+                                    </button>
+                                </a>
                             </div>
 
                             <div className="BackgroundAsImage__RightColumn-sc-64ha7n-6 cUAVOf">
@@ -37,12 +40,12 @@ function LandingPage() {
                                 >
 
                                     <img
-                                    className="w-100"
-                                   
+                                        className="w-100"
+
                                         src="https://www.quizexpo.com/wp-content/uploads/2021/02/cover-5-850x491.jpg"
                                         alt="The Best Chill Hip Hop Lo-Fi Music for Study and Relaxing"
-                                        style={{ position: 'absolute', top: '0px'}}
-                                        ></img>
+                                        style={{ position: 'absolute', top: '0px' }}
+                                    ></img>
                                 </div>
                             </div>
 
@@ -54,7 +57,7 @@ function LandingPage() {
             <ThreeFeatures />
             <ThreeBigFeatures />
             {/* <TabGrid  image={image}/> */}
-           
+
 
         </main>
 
