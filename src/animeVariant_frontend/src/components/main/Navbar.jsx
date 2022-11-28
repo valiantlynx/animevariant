@@ -20,13 +20,19 @@ function Navbar(props) {
 
                         aria-label="Bootstrap" />
                 </Link>
-                <h5 class="navbar-brand fs-1" >Anime Variant</h5>
+                <a href="/">
+                    <h5 class="navbar-brand fs-1" >Anime Variant</h5>
+                </a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="offcanvas offcanvas-end " style={{ backgroundColor: "#19063F" }} tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title text-bg-dark" id="offcanvasNavbarLabel">Anime Variant</h5>
+                        <a href="/">
+                            <h5 class="offcanvas-title text-bg-dark" id="offcanvasNavbarLabel">Anime Variant</h5>
+                        </a>
+
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
@@ -46,7 +52,7 @@ function Navbar(props) {
                                     Personal
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li  onClick={props.handleClick1}><Link class="dropdown-item" to="/minter">Create NFTs..</Link></li>
+                                    <li onClick={props.handleClick1}><Link class="dropdown-item" to="/minter">Create NFTs..</Link></li>
                                     <li onClick={props.handleClick2}><Link class="dropdown-item" to="/collection" >My NFTs</Link></li>
 
                                     <li>
@@ -54,7 +60,7 @@ function Navbar(props) {
                                     </li>
                                     <li><a class="dropdown-item" href="https://5ilw3-6iaaa-aaaak-acxbq-cai.ic0.app/">wallet</a></li>
                                     <li><Link class="dropdown-item" to="/profile">Profile</Link></li>
-                                    <li  onClick={props.handleClick3}><a class="dropdown-item" href="#">Sign out</a></li>
+                                    <li onClick={props.handleClick3}><a class="dropdown-item" href="#">Sign out</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -65,7 +71,7 @@ function Navbar(props) {
                     </div>
                 </div>
             </div>
-            
+
         </nav>
     );
 }

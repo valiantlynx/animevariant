@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./components/main/App";
 import { AuthClient } from '@dfinity/auth-client';
-import * as serviceWorkerRegistration from "../../serviceWorkerRegistration";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import WelcomeAnimasjon from "./components/main/WelcomeAnimasjon";
 import Particle from "./components/main/Particle";
 import Button from './components/main/Button';

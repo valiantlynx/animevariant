@@ -27,7 +27,7 @@ function LandingPage() {
                                 </span><br /><span
                                     className="BackgroundAsImage__SlantedBackground-sc-64ha7n-8 jXSXUY">
                                         Marketplace</span></h1>
-                                <a href="#/manga">
+                                <a href="/manga">
                                     <button
                                         className="BackgroundAsImage__PrimaryAction-sc-64ha7n-10 jQtzpG">Get Started
                                     </button>
@@ -42,7 +42,7 @@ function LandingPage() {
                                     <img
                                         className="w-100"
 
-                                        src="https://www.quizexpo.com/wp-content/uploads/2021/02/cover-5-850x491.jpg"
+                                        src="https://raw.githubusercontent.com/Animevariant/Animevariant/main/ezgif-3-b2438d3a3a.webp"
                                         alt="The Best Chill Hip Hop Lo-Fi Music for Study and Relaxing"
                                         style={{ position: 'absolute', top: '0px' }}
                                     ></img>
