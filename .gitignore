@@ -17,5 +17,5 @@ src/declarations/
 node_modules/
 dist/
 
-# Local Netlify folder
-.netlify
+# environment variables
+.env

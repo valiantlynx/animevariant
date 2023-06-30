@@ -1,22 +1,21 @@
 {
   "canisters": {
-    "animeVariant_backend": {
-      "main": "src/animeVariant_backend/main.mo",
+    "animevariant_backend": {
+      "main": "src/animevariant_backend/main.mo",
       "type": "motoko"
     },
-    "animeVariant_frontend": {
+    "animevariant_frontend": {
       "dependencies": [
-        "animeVariant_backend"
+        "animevariant_backend"
       ],
       "frontend": {
-        "entrypoint": "src/animeVariant_frontend/src/index.html"
+        "entrypoint": "src/animevariant_frontend/src/index.html"
       },
       "source": [
-        "src/animeVariant_frontend/assets",
-        "dist/animeVariant_frontend/"
+        "src/animevariant_frontend/assets",
+        "dist/animevariant_frontend/"
       ],
-      "type": "assets",
-      "hostname": "animevariant.com"
+      "type": "assets"
     }
   },
   "defaults": {
@@ -25,12 +24,6 @@
       "packtool": ""
     }
   },
-  "dfx": "0.11.2",
-  "networks": {
-    "local": {
-      "bind": "127.0.0.1:8000",
-      "type": "ephemeral"
-    }
-  },
+  "output_env_file": ".env",
   "version": 1
 }
