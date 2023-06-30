@@ -1,60 +1,52 @@
-# animevariant
+# AnimeVariant
 
-Welcome to your new animevariant project and to the internet computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
+## Welcome to the AnimeVariant project
+- Watch Anime and read Manga online. 
+- Earn money by reading and watching anime.
+- We never ask for personal infomation
+- AnimeVariant is Decentralised app Written in React and motoko.
 
-To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
+## Desentralised Urls
+- animeVariant - https://52nbc-syaaa-aaaak-acxcq-cai.ic0.app/#/ -main website.
+- variant - https://5ilw3-6iaaa-aaaak-acxbq-cai.ic0.app/ -wallet for variant tokens.
 
-To learn more before you start working with animevariant, see the following documentation available online:
+## Own Your Art.
+AnimeVariant offers everyone the opportunity to truly own the art they wish. Creators can mint their work as non fungible tokens and sell it to the whole world. In the web AnimeVariant offers all user the opportunity to buy the works they like and sell if they wish. A trading place for all art.
 
-- [Quick Start](https://internetcomputer.org/docs/current/developer-docs/quickstart/hello10mins)
-- [SDK Developer Tools](https://internetcomputer.org/docs/current/developer-docs/build/install-upgrade-remove)
-- [Motoko Programming Language Guide](https://internetcomputer.org/docs/current/developer-docs/build/cdks/motoko-dfinity/motoko/)
-- [Motoko Language Quick Reference](https://internetcomputer.org/docs/current/references/motoko-ref/)
-- [JavaScript API Reference](https://erxue-5aaaa-aaaab-qaagq-cai.raw.icp0.io)
+## How it works - How to earn money
+- All revenue from views and ads get turned into tokens
+- Popularity of an artwork or creator increases value.
+- Verfied Original artwork increases value.
+- If the creator is popular enough, they can suggest for tokens to view their work.
+Value of an art work i divided into percenteges and revenue is delivered as shown below. 
 
-If you want to start working on your project right away, you might want to try the following commands:
+### Users
+- They can buy what they like and get unconditional acces to it.
+- if bought they will own the nft and are entitled to revieve 70% of all revenue.
+- They can choose to sell the owned artworks as well.
+ 
+### creators
+- The initial sum for selling it the first time. 
+- They can also buy and sell,thus also ahave all privileges of a user.
+- They are entitled to 10% of each if their artwork revenue.
+- Verified(as Original) creator are entitled to 20% of each if their artwork revenue.
 
-```bash
-cd animevariant/
-dfx help
-dfx canister --help
-```
+The rest of the percentages are divided as follows:
+- 9%(19% from unverified creators) of each sale goes to the animeVariant pool.
+The pool stores real money such that the artwork that are being traded actually have value
+- 1% of each sale goes to animeVariant.
 
-## Running the project locally
 
-If you want to test your project locally, you can use the following commands:
+## How do you trade without personal information.
+Not to worry. We use a state of the art blochain tecnonology in the internet compouter blockchain called internet Identity .What?
+Internet Identity is an authentication framework. It installs an "anchor" into your device in which get stored compatible cryptography enebled devices. Such as fingerprints, faceid and pins in your phone. You can also use portable HSM, such as a YubiKey or Ledger wallet. THis makes it very convenient as you never need to remember any passwords. You dont need to provide email, phonenumber or any personal info.
+The "anchor is stored in your device and only that device. it is never in the blockchain nor can it be moved to a new device. This means you have to use the same device to log in with the same identity(account). 
+still not convinced?
+For a more detailed explanation go here (https://internetcomputer.org/docs/current/tokenomics/identity-auth/what-is-ic-identity/)
 
-```bash
-# Starts the replica, running in the background
-dfx start --background
 
-# Deploys your canisters to the replica and generates your candid interface
-dfx deploy
-```
 
-Once the job completes, your application will be available at `http://localhost:4943?canisterId={asset_canister_id}`.
+Copyright 2022 Smart Innovative Products AS (www.smartinnovativeproducts.com)
 
-If you have made changes to your backend canister, you can generate a new candid interface with
 
-```bash
-npm run generate
-```
 
-at any time. This is recommended before starting the frontend development server, and will be run automatically any time you run `dfx deploy`.
-
-If you are making frontend changes, you can start a development server with
-
-```bash
-npm start
-```
-
-Which will start a server at `http://localhost:8080`, proxying API requests to the replica at port 4943.
-
-### Note on frontend environment variables
-
-If you are hosting frontend code somewhere without using DFX, you may need to make one of the following adjustments to ensure your project does not fetch the root key in production:
-
-- set`DFX_NETWORK` to `ic` if you are using Webpack
-- use your own preferred method to replace `process.env.DFX_NETWORK` in the autogenerated declarations
-  - Setting `canisters -> {asset_canister_id} -> declarations -> env_override to a string` in `dfx.json` will replace `process.env.DFX_NETWORK` with the string in the autogenerated declarations
-- Write your own `createActor` constructor
