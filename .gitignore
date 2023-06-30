@@ -22,3 +22,5 @@ dist/
 
 # Local Netlify folder
 .netlify
+
+src/animevariant_frontend/assets/mangas

@@ -8,6 +8,9 @@ import Iter "mo:base/Iter";
 
 
 actor animeVariant {
+    public query func greet(name : Text) : async Text {
+    return "Hello, " # name # "!, welcome to the animeVariant canister.";
+  };
 
   private type Listing = {
     itemOwner: Principal;
@@ -157,8 +160,3 @@ actor animeVariant {
 
 };
 
-actor {
-  public query func greet(name : Text) : async Text {
-    return "Hello, " # name # "!";
-  };
-};
